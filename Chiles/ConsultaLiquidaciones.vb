@@ -65,7 +65,7 @@ Public Class ConsultaLiquidaciones
     End Sub
 
     Private Sub FormatoGridView()
-        DgProducciones.Columns(0).HeaderText = "ID"
+        DgProducciones.Columns(0).Visible = False
         DgProducciones.Columns(2).HeaderText = "Precio Bote"
         DgProducciones.Columns(3).HeaderText = "Cantidad Botes"
         DgProducciones.Columns(4).HeaderText = "Total"

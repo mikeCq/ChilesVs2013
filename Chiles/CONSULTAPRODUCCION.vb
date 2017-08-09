@@ -91,7 +91,7 @@ Public Class CONSULTAPRODUCCION
         Close()
     End Sub
     Private Sub FormatoGirdView()
-        DgProducciones.Columns(0).HeaderText = "ID"
+        DgProducciones.Columns(0).Visible = False
         DgProducciones.Columns(1).HeaderText = "Fecha"
         DgProducciones.Columns(2).HeaderText = "Precio"
         DgProducciones.Columns(4).Visible = False

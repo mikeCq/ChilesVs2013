@@ -149,7 +149,7 @@ Public Class LIQUIDACIONES
         Close()
     End Sub
     Private Sub FormatoGridView()
-        DgBotesIngresados.Columns(0).HeaderText = "ID"
+        DgBotesIngresados.Columns(0).Visible = False
         DgBotesIngresados.Columns(1).HeaderText = "ID Empleado"
         DgBotesIngresados.Columns(2).HeaderText = "Botes Recibidos"
         DgBotesIngresados.Columns(4).Visible = False

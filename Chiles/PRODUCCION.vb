@@ -254,7 +254,7 @@ Public Class Produccion
         Close()
     End Sub
     Private Sub FormatoGridView()
-        DgBoteIngresado.Columns(0).HeaderText = "ID"
+        DgBoteIngresado.Columns(0).Visible = False
         DgBoteIngresado.Columns(2).HeaderText = "Botes Recibidos"
         DgBoteIngresado.Columns(4).Visible = False 'id de prodcuccion
         DgBoteIngresado.Columns(5).HeaderText = "Precio Bote"
