@@ -22,6 +22,7 @@ Partial Class Produccion
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Produccion))
         Me.DtFecha = New System.Windows.Forms.DateTimePicker()
         Me.GbCaptura = New System.Windows.Forms.GroupBox()
         Me.BtCerrar = New System.Windows.Forms.Button()
@@ -306,6 +307,7 @@ Partial Class Produccion
         Me.Controls.Add(Me.GbAbrir)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.DgBoteIngresado)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Produccion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PRODUCCION"

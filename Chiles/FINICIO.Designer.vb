@@ -37,68 +37,86 @@ Partial Class FInicio
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatalogosToolStripMenuItem, Me.ProduccionToolStripMenuItem, Me.UtilidadesToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(946, 24)
+        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.MenuStrip1.Size = New System.Drawing.Size(946, 29)
         Me.MenuStrip1.TabIndex = 18
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'CatalogosToolStripMenuItem
         '
+        Me.CatalogosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CatalogosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem})
+        Me.CatalogosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.CatalogosToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CatalogosToolStripMenuItem.Name = "CatalogosToolStripMenuItem"
-        Me.CatalogosToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
+        Me.CatalogosToolStripMenuItem.Size = New System.Drawing.Size(98, 25)
         Me.CatalogosToolStripMenuItem.Text = "Catalogos"
         '
         'ProductosToolStripMenuItem
         '
+        Me.ProductosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ProductosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(157, 26)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'ProduccionToolStripMenuItem
         '
         Me.ProduccionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EstablecerPrecioDiarioToolStripMenuItem, Me.LiquidacionesToolStripMenuItem})
+        Me.ProduccionToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ProduccionToolStripMenuItem.Name = "ProduccionToolStripMenuItem"
-        Me.ProduccionToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
+        Me.ProduccionToolStripMenuItem.Size = New System.Drawing.Size(89, 25)
         Me.ProduccionToolStripMenuItem.Text = "Procesos"
         '
         'EstablecerPrecioDiarioToolStripMenuItem
         '
+        Me.EstablecerPrecioDiarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.EstablecerPrecioDiarioToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.EstablecerPrecioDiarioToolStripMenuItem.Name = "EstablecerPrecioDiarioToolStripMenuItem"
-        Me.EstablecerPrecioDiarioToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.EstablecerPrecioDiarioToolStripMenuItem.Size = New System.Drawing.Size(186, 26)
         Me.EstablecerPrecioDiarioToolStripMenuItem.Text = "Produccion"
         '
         'LiquidacionesToolStripMenuItem
         '
+        Me.LiquidacionesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LiquidacionesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.LiquidacionesToolStripMenuItem.Name = "LiquidacionesToolStripMenuItem"
-        Me.LiquidacionesToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.LiquidacionesToolStripMenuItem.Size = New System.Drawing.Size(186, 26)
         Me.LiquidacionesToolStripMenuItem.Text = "Liquidaciones"
         '
         'UtilidadesToolStripMenuItem
         '
         Me.UtilidadesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesToolStripMenuItem})
+        Me.UtilidadesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.UtilidadesToolStripMenuItem.Name = "UtilidadesToolStripMenuItem"
-        Me.UtilidadesToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.UtilidadesToolStripMenuItem.Size = New System.Drawing.Size(100, 25)
         Me.UtilidadesToolStripMenuItem.Text = "Utilidades"
         '
         'ReportesToolStripMenuItem
         '
+        Me.ReportesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ReportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(147, 26)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'SalirToolStripMenuItem
         '
+        Me.SalirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(56, 25)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'FInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(946, 580)

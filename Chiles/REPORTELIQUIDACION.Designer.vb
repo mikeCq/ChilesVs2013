@@ -22,6 +22,7 @@ Partial Class REPORTELIQUIDACION
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(REPORTELIQUIDACION))
         Me.CrLiquidacion = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.SuspendLayout()
         '
@@ -52,6 +53,7 @@ Partial Class REPORTELIQUIDACION
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1042, 733)
         Me.Controls.Add(Me.CrLiquidacion)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "REPORTELIQUIDACION"
         Me.Text = "REPORTELIQUIDACION"
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized

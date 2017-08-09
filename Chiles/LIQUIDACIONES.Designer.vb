@@ -292,6 +292,7 @@ Partial Class LIQUIDACIONES
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxIdProduccion)
         Me.Controls.Add(Me.ToolStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LIQUIDACIONES"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Liquidaciones"

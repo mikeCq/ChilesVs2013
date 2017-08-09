@@ -5,14 +5,14 @@ Public Class PRODUCTOS
     Dim cmd As SqlCommand
     Private Sub PRODUCTOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Nuevo()
-        CargarData()
-        FormatoGridView()
     End Sub
     Private Sub Nuevo()
         TxIdProducto.Text = ""
         TxProducto.Text = ""
         DgProductos.DataSource = ""
         DgProductos.Columns.Clear()
+        CargarData()
+        FormatoGridView()
     End Sub
     Private Sub TsNuevo_Click(sender As Object, e As EventArgs) Handles TsNuevo.Click
         Nuevo()

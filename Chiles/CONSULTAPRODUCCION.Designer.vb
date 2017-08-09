@@ -22,6 +22,7 @@ Partial Class CONSULTAPRODUCCION
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CONSULTAPRODUCCION))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.TsNuevo = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripSeparator()
@@ -163,6 +164,7 @@ Partial Class CONSULTAPRODUCCION
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DtFinal)
         Me.Controls.Add(Me.DtInicial)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CONSULTAPRODUCCION"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta"
