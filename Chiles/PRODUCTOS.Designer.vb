@@ -33,6 +33,8 @@ Partial Class PRODUCTOS
         Me.TsGuardar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsEliminar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         CType(Me.DgProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -47,20 +49,20 @@ Partial Class PRODUCTOS
         Me.DgProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgProductos.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DgProductos.Location = New System.Drawing.Point(0, 140)
+        Me.DgProductos.Location = New System.Drawing.Point(0, 77)
         Me.DgProductos.MultiSelect = False
         Me.DgProductos.Name = "DgProductos"
         Me.DgProductos.ReadOnly = True
         Me.DgProductos.RowHeadersVisible = False
         Me.DgProductos.RowHeadersWidth = 40
         Me.DgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgProductos.Size = New System.Drawing.Size(532, 250)
+        Me.DgProductos.Size = New System.Drawing.Size(532, 236)
         Me.DgProductos.TabIndex = 12
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(4, 70)
+        Me.Label2.Location = New System.Drawing.Point(12, 25)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(24, 13)
         Me.Label2.TabIndex = 10
@@ -69,7 +71,7 @@ Partial Class PRODUCTOS
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(4, 96)
+        Me.Label1.Location = New System.Drawing.Point(12, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(56, 13)
         Me.Label1.TabIndex = 11
@@ -78,7 +80,7 @@ Partial Class PRODUCTOS
         'TxIdProducto
         '
         Me.TxIdProducto.Enabled = False
-        Me.TxIdProducto.Location = New System.Drawing.Point(66, 67)
+        Me.TxIdProducto.Location = New System.Drawing.Point(74, 25)
         Me.TxIdProducto.MaxLength = 20
         Me.TxIdProducto.Name = "TxIdProducto"
         Me.TxIdProducto.Size = New System.Drawing.Size(116, 20)
@@ -86,7 +88,8 @@ Partial Class PRODUCTOS
         '
         'TxProducto
         '
-        Me.TxProducto.Location = New System.Drawing.Point(66, 93)
+        Me.TxProducto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxProducto.Location = New System.Drawing.Point(74, 51)
         Me.TxProducto.MaxLength = 20
         Me.TxProducto.Name = "TxProducto"
         Me.TxProducto.Size = New System.Drawing.Size(256, 20)
@@ -94,7 +97,7 @@ Partial Class PRODUCTOS
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.TsGuardar, Me.ToolStripSeparator2, Me.TsEliminar})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.TsGuardar, Me.ToolStripSeparator2, Me.TsEliminar, Me.ToolStripSeparator1, Me.ToolStripLabel1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(532, 25)
@@ -136,11 +139,22 @@ Partial Class PRODUCTOS
         Me.TsEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.TsEliminar.ToolTipText = "Eliminar"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(29, 22)
+        Me.ToolStripLabel1.Text = "Salir"
+        '
         'PRODUCTOS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(532, 392)
+        Me.ClientSize = New System.Drawing.Size(532, 327)
         Me.Controls.Add(Me.DgProductos)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -148,7 +162,8 @@ Partial Class PRODUCTOS
         Me.Controls.Add(Me.TxProducto)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "PRODUCTOS"
-        Me.Text = "PRODUCTOS"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Productos"
         CType(Me.DgProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
@@ -167,4 +182,6 @@ Partial Class PRODUCTOS
     Friend WithEvents TsGuardar As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents TsEliminar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
 End Class

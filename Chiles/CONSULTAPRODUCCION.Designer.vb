@@ -44,7 +44,7 @@ Partial Class CONSULTAPRODUCCION
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.TsConsultar, Me.ToolStripSeparator1, Me.TsSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(846, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(684, 25)
         Me.ToolStrip1.TabIndex = 15
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -94,7 +94,7 @@ Partial Class CONSULTAPRODUCCION
         Me.DgProducciones.RowHeadersVisible = False
         Me.DgProducciones.RowHeadersWidth = 40
         Me.DgProducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgProducciones.Size = New System.Drawing.Size(844, 428)
+        Me.DgProducciones.Size = New System.Drawing.Size(683, 210)
         Me.DgProducciones.TabIndex = 14
         '
         'CbProducto
@@ -154,7 +154,7 @@ Partial Class CONSULTAPRODUCCION
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(846, 537)
+        Me.ClientSize = New System.Drawing.Size(684, 321)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.DgProducciones)
         Me.Controls.Add(Me.CbProducto)
@@ -164,7 +164,8 @@ Partial Class CONSULTAPRODUCCION
         Me.Controls.Add(Me.DtFinal)
         Me.Controls.Add(Me.DtInicial)
         Me.Name = "CONSULTAPRODUCCION"
-        Me.Text = "CONSULTAPRODUCCION"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Consulta"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.DgProducciones, System.ComponentModel.ISupportInitialize).EndInit()

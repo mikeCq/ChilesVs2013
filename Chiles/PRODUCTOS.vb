@@ -4,12 +4,15 @@ Public Class PRODUCTOS
     Dim cnn As New SqlConnection(VarGlob.ConexionPrincipal)
     Dim cmd As SqlCommand
     Private Sub PRODUCTOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarData()
         Nuevo()
+        CargarData()
+        FormatoGridView()
     End Sub
     Private Sub Nuevo()
         TxIdProducto.Text = ""
         TxProducto.Text = ""
+        DgProductos.DataSource = ""
+        DgProductos.Columns.Clear()
     End Sub
     Private Sub TsNuevo_Click(sender As Object, e As EventArgs) Handles TsNuevo.Click
         Nuevo()
@@ -21,17 +24,14 @@ Public Class PRODUCTOS
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@IdProducto", 0))
             cmd.Parameters.Add(New SqlParameter("@Nombre", TxProducto.Text))
-
             cmd.Parameters("@IdProducto").Direction = ParameterDirection.InputOutput
-
             cmd.ExecuteNonQuery()
-
-            TxIdProducto.Text = cmd.Parameters("@IdProducto").Value
-
+            TxIdProducto.Text = cmd.Parameters("@IdProducto").Value           
         Catch ex As Exception
         Finally
             cnn.Close()
             CargarData()
+            FormatoGridView()
         End Try
     End Sub
     Private Sub CargarData()
@@ -51,13 +51,14 @@ Public Class PRODUCTOS
             cmd = New SqlCommand("sp_EliProducto", cnn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@IdProducto", TxIdProducto.Text))
-
             cmd.ExecuteNonQuery()
-
         Catch ex As Exception
         Finally
             cnn.Close()
             CargarData()
+            FormatoGridView()
+            TxIdProducto.Text = ""
+            TxProducto.Text = ""
         End Try
     End Sub
 
@@ -68,24 +69,27 @@ Public Class PRODUCTOS
             Try
                 cnn.Open()
                 Dim cmd As New SqlCommand("sp_SelProducto", cnn)
-
                 cmd.CommandType = CommandType.StoredProcedure
-
                 cmd.Parameters.Add(New SqlClient.SqlParameter("@idproducto", DgProductos.CurrentRow.Cells(0).Value))
-
                 Dim da As New SqlClient.SqlDataAdapter(cmd)
                 Dim dt As New DataTable
-
                 da.Fill(dt)
                 Dim row As DataRow = dt.Rows(0)
                 TxIdProducto.Text = CStr(row("idproducto"))
                 TxProducto.Text = CStr(row("nombre"))
-
             Catch ex As Exception
             Finally
                 cnn.Close()
             End Try
         End If
+    End Sub
+    Private Sub FormatoGridView()
+        'DgProductos.Columns("IdProducto").Width = 15
+        DgProductos.Columns("IdProducto").HeaderText = "ID"
+        DgProductos.Columns("nombre").HeaderText = "Nombre"
+    End Sub
 
+    Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripLabel1.Click
+        Close()
     End Sub
 End Class

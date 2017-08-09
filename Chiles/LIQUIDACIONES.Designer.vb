@@ -64,14 +64,14 @@ Partial Class LIQUIDACIONES
         Me.DgBotesIngresados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DgBotesIngresados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgBotesIngresados.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DgBotesIngresados.Location = New System.Drawing.Point(0, 160)
+        Me.DgBotesIngresados.Location = New System.Drawing.Point(0, 140)
         Me.DgBotesIngresados.MultiSelect = False
         Me.DgBotesIngresados.Name = "DgBotesIngresados"
         Me.DgBotesIngresados.ReadOnly = True
         Me.DgBotesIngresados.RowHeadersVisible = False
         Me.DgBotesIngresados.RowHeadersWidth = 40
         Me.DgBotesIngresados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgBotesIngresados.Size = New System.Drawing.Size(799, 333)
+        Me.DgBotesIngresados.Size = New System.Drawing.Size(799, 353)
         Me.DgBotesIngresados.TabIndex = 16
         '
         'GbLiquidacion
@@ -91,7 +91,7 @@ Partial Class LIQUIDACIONES
         Me.GbLiquidacion.Enabled = False
         Me.GbLiquidacion.Location = New System.Drawing.Point(0, 32)
         Me.GbLiquidacion.Name = "GbLiquidacion"
-        Me.GbLiquidacion.Size = New System.Drawing.Size(799, 122)
+        Me.GbLiquidacion.Size = New System.Drawing.Size(799, 102)
         Me.GbLiquidacion.TabIndex = 15
         Me.GbLiquidacion.TabStop = False
         '
@@ -115,7 +115,7 @@ Partial Class LIQUIDACIONES
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(599, 73)
+        Me.Label6.Location = New System.Drawing.Point(12, 66)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 13)
         Me.Label6.TabIndex = 8
@@ -124,7 +124,7 @@ Partial Class LIQUIDACIONES
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 73)
+        Me.Label2.Location = New System.Drawing.Point(12, 41)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 7
@@ -133,7 +133,7 @@ Partial Class LIQUIDACIONES
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(370, 16)
+        Me.Label4.Location = New System.Drawing.Point(201, 42)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(67, 13)
         Me.Label4.TabIndex = 8
@@ -142,7 +142,7 @@ Partial Class LIQUIDACIONES
         'DtFecha
         '
         Me.DtFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtFecha.Location = New System.Drawing.Point(74, 70)
+        Me.DtFecha.Location = New System.Drawing.Point(74, 40)
         Me.DtFecha.Name = "DtFecha"
         Me.DtFecha.Size = New System.Drawing.Size(121, 20)
         Me.DtFecha.TabIndex = 3
@@ -159,7 +159,7 @@ Partial Class LIQUIDACIONES
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(570, 16)
+        Me.Label3.Location = New System.Drawing.Point(201, 68)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 13)
         Me.Label3.TabIndex = 7
@@ -167,7 +167,7 @@ Partial Class LIQUIDACIONES
         '
         'TxCantidadBotes
         '
-        Me.TxCantidadBotes.Location = New System.Drawing.Point(443, 13)
+        Me.TxCantidadBotes.Location = New System.Drawing.Point(284, 42)
         Me.TxCantidadBotes.Name = "TxCantidadBotes"
         Me.TxCantidadBotes.Size = New System.Drawing.Size(121, 20)
         Me.TxCantidadBotes.TabIndex = 4
@@ -175,27 +175,27 @@ Partial Class LIQUIDACIONES
         'NuPrecio
         '
         Me.NuPrecio.DecimalPlaces = 2
-        Me.NuPrecio.Location = New System.Drawing.Point(250, 13)
+        Me.NuPrecio.Location = New System.Drawing.Point(284, 16)
         Me.NuPrecio.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.NuPrecio.Name = "NuPrecio"
-        Me.NuPrecio.Size = New System.Drawing.Size(114, 20)
+        Me.NuPrecio.Size = New System.Drawing.Size(121, 20)
         Me.NuPrecio.TabIndex = 5
         Me.NuPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'NuTotalPagar
         '
         Me.NuTotalPagar.DecimalPlaces = 2
-        Me.NuTotalPagar.Location = New System.Drawing.Point(653, 13)
+        Me.NuTotalPagar.Location = New System.Drawing.Point(284, 68)
         Me.NuTotalPagar.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.NuTotalPagar.Name = "NuTotalPagar"
-        Me.NuTotalPagar.Size = New System.Drawing.Size(114, 20)
+        Me.NuTotalPagar.Size = New System.Drawing.Size(121, 20)
         Me.NuTotalPagar.TabIndex = 5
         Me.NuTotalPagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'CbEstatus
         '
         Me.CbEstatus.FormattingEnabled = True
-        Me.CbEstatus.Location = New System.Drawing.Point(653, 70)
+        Me.CbEstatus.Location = New System.Drawing.Point(74, 66)
         Me.CbEstatus.Name = "CbEstatus"
         Me.CbEstatus.Size = New System.Drawing.Size(121, 21)
         Me.CbEstatus.TabIndex = 6
@@ -280,8 +280,8 @@ Partial Class LIQUIDACIONES
         Me.Controls.Add(Me.TxIdProduccion)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "LIQUIDACIONES"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "LIQUIDACIONES"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Liquidaciones"
         CType(Me.DgBotesIngresados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbLiquidacion.ResumeLayout(False)
         Me.GbLiquidacion.PerformLayout()

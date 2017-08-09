@@ -70,9 +70,9 @@ Partial Class Produccion
         Me.GbCaptura.Controls.Add(Me.BtCerrar)
         Me.GbCaptura.Controls.Add(Me.Label3)
         Me.GbCaptura.Controls.Add(Me.TxCaptura)
-        Me.GbCaptura.Location = New System.Drawing.Point(0, 164)
+        Me.GbCaptura.Location = New System.Drawing.Point(0, 175)
         Me.GbCaptura.Name = "GbCaptura"
-        Me.GbCaptura.Size = New System.Drawing.Size(825, 126)
+        Me.GbCaptura.Size = New System.Drawing.Size(825, 119)
         Me.GbCaptura.TabIndex = 8
         Me.GbCaptura.TabStop = False
         '
@@ -100,7 +100,7 @@ Partial Class Produccion
         Me.TxCaptura.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxCaptura.Location = New System.Drawing.Point(6, 50)
         Me.TxCaptura.Name = "TxCaptura"
-        Me.TxCaptura.Size = New System.Drawing.Size(279, 62)
+        Me.TxCaptura.Size = New System.Drawing.Size(273, 62)
         Me.TxCaptura.TabIndex = 0
         '
         'GbAbrir
@@ -117,7 +117,7 @@ Partial Class Produccion
         Me.GbAbrir.Controls.Add(Me.Label2)
         Me.GbAbrir.Location = New System.Drawing.Point(0, 34)
         Me.GbAbrir.Name = "GbAbrir"
-        Me.GbAbrir.Size = New System.Drawing.Size(825, 124)
+        Me.GbAbrir.Size = New System.Drawing.Size(825, 135)
         Me.GbAbrir.TabIndex = 7
         Me.GbAbrir.TabStop = False
         '
@@ -151,14 +151,14 @@ Partial Class Produccion
         'TxNombreDia
         '
         Me.TxNombreDia.Enabled = False
-        Me.TxNombreDia.Location = New System.Drawing.Point(699, 59)
+        Me.TxNombreDia.Location = New System.Drawing.Point(363, 11)
         Me.TxNombreDia.Name = "TxNombreDia"
         Me.TxNombreDia.Size = New System.Drawing.Size(114, 20)
         Me.TxNombreDia.TabIndex = 0
         '
         'TxIdProduccion
         '
-        Me.TxIdProduccion.Location = New System.Drawing.Point(699, 9)
+        Me.TxIdProduccion.Location = New System.Drawing.Point(483, 11)
         Me.TxIdProduccion.Name = "TxIdProduccion"
         Me.TxIdProduccion.Size = New System.Drawing.Size(114, 20)
         Me.TxIdProduccion.TabIndex = 0
@@ -185,7 +185,7 @@ Partial Class Produccion
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(631, 62)
+        Me.Label5.Location = New System.Drawing.Point(328, 11)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(29, 13)
         Me.Label5.TabIndex = 0
@@ -286,17 +286,17 @@ Partial Class Produccion
         Me.DgBoteIngresado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DgBoteIngresado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgBoteIngresado.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DgBoteIngresado.Location = New System.Drawing.Point(12, 296)
+        Me.DgBoteIngresado.Location = New System.Drawing.Point(12, 300)
         Me.DgBoteIngresado.MultiSelect = False
         Me.DgBoteIngresado.Name = "DgBoteIngresado"
         Me.DgBoteIngresado.ReadOnly = True
         Me.DgBoteIngresado.RowHeadersVisible = False
         Me.DgBoteIngresado.RowHeadersWidth = 40
         Me.DgBoteIngresado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgBoteIngresado.Size = New System.Drawing.Size(801, 285)
+        Me.DgBoteIngresado.Size = New System.Drawing.Size(801, 281)
         Me.DgBoteIngresado.TabIndex = 6
         '
-        'PRODUCCION
+        'Produccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -306,7 +306,8 @@ Partial Class Produccion
         Me.Controls.Add(Me.GbAbrir)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.DgBoteIngresado)
-        Me.Name = "PRODUCCION"
+        Me.Name = "Produccion"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PRODUCCION"
         Me.GbCaptura.ResumeLayout(False)
         Me.GbCaptura.PerformLayout()

@@ -35,9 +35,7 @@ Public Class ConsultaLiquidaciones
         CbProducto.SelectedIndex = -1
         cnn.Close()
     End Sub
-    Private Sub BtBuscar_Click(sender As Object, e As EventArgs) Handles BtBuscar.Click
-        cargarData()
-    End Sub
+
     Private Sub cargarData()
         cnn.Open()
         Dim cmd As New SqlCommand("sp_LlenarLiquidaciones", cnn)
@@ -59,5 +57,13 @@ Public Class ConsultaLiquidaciones
             _codigoProduccion = CStr(DgProducciones.CurrentRow.Cells(0).Value)
             Close()
         End If
+    End Sub
+
+    Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripLabel1.Click
+        cargarData()
+    End Sub
+
+    Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripLabel2.Click
+        Close()
     End Sub
 End Class
