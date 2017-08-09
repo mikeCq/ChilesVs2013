@@ -94,6 +94,7 @@ Public Class Produccion
             Finally
                 cnn.Close()
                 cargarData()
+                FormatoGridView()
                 GbAbrir.Enabled = False
                 GbCaptura.Enabled = True
             End Try
@@ -251,5 +252,17 @@ Public Class Produccion
     End Sub
     Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles TsSalir.Click
         Close()
+    End Sub
+    Private Sub FormatoGridView()
+        DgBoteIngresado.Columns(0).HeaderText = "ID"
+        DgBoteIngresado.Columns(2).HeaderText = "Botes Recibidos"
+        DgBoteIngresado.Columns(4).Visible = False 'id de prodcuccion
+        DgBoteIngresado.Columns(5).HeaderText = "Precio Bote"
+        DgBoteIngresado.Columns(6).HeaderText = "Dia"
+        DgBoteIngresado.Columns.Item("PrecioBote").DefaultCellStyle.Format = "###,##0.00"
+    End Sub
+
+    Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
+
     End Sub
 End Class

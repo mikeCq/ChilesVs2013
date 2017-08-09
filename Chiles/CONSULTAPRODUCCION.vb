@@ -34,6 +34,7 @@ Public Class CONSULTAPRODUCCION
             da.Fill(dt)
             DgProducciones.DataSource = dt
             cnn.Close()
+            FormatoGirdView()
         End If
     End Sub
     Private Sub llenaCombos()
@@ -88,5 +89,11 @@ Public Class CONSULTAPRODUCCION
     End Sub
     Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles TsSalir.Click
         Close()
+    End Sub
+    Private Sub FormatoGirdView()
+        DgProducciones.Columns(0).HeaderText = "ID"
+        DgProducciones.Columns(1).HeaderText = "Fecha"
+        DgProducciones.Columns(2).HeaderText = "Precio"
+        DgProducciones.Columns(4).Visible = False
     End Sub
 End Class

@@ -19,13 +19,10 @@ Public Class ConsultaLiquidaciones
         cnn.Open()
         Dim da As SqlDataAdapter
         Dim ds As DataSet
-
         Dim cmdllenaCbProd As SqlCommand
-
         cmdllenaCbProd = New SqlCommand("sp_LlenaDgProductos")
         cmdllenaCbProd.CommandType = CommandType.StoredProcedure
         cmdllenaCbProd.Connection = cnn
-
         da = New SqlDataAdapter(cmdllenaCbProd)
         ds = New DataSet()
         da.Fill(ds)
@@ -43,12 +40,12 @@ Public Class ConsultaLiquidaciones
         cmd.Parameters.Add(New SqlParameter("@FechaIni", DtInicial.Value))
         cmd.Parameters.Add(New SqlParameter("@FechaFin", DtFinal.Value))
         cmd.Parameters.Add(New SqlParameter("@Producto", CbProducto.Text))
-
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable
         da.Fill(dt)
         DgProducciones.DataSource = dt
         cnn.Close()
+        FormatoGridView()
     End Sub
     Private Sub SeleccionaLiquidacion() Handles DgProducciones.DoubleClick
         If DgProducciones.RowCount = 0 Then
@@ -65,5 +62,13 @@ Public Class ConsultaLiquidaciones
 
     Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripLabel2.Click
         Close()
+    End Sub
+
+    Private Sub FormatoGridView()
+        DgProducciones.Columns(0).HeaderText = "ID"
+        DgProducciones.Columns(2).HeaderText = "Precio Bote"
+        DgProducciones.Columns(3).HeaderText = "Cantidad Botes"
+        DgProducciones.Columns(4).HeaderText = "Total"
+        DgProducciones.Columns(6).Visible = False
     End Sub
 End Class

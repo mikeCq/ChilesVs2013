@@ -74,14 +74,10 @@ Public Class LIQUIDACIONES
             Dim codigoSeleccionado As Object = consultaLiquidacion.CodigoProduccion
             If codigoSeleccionado <> Nothing Then
                 Dim cmd As New SqlCommand("sp_selProduccion", cnn)
-
                 cmd.CommandType = CommandType.StoredProcedure
-
                 cmd.Parameters.Add(New SqlClient.SqlParameter("@IdProduccion", codigoSeleccionado))
-
                 Dim da As New SqlClient.SqlDataAdapter(cmd)
                 Dim dt As New DataTable
-
                 da.Fill(dt)
                 Dim row As DataRow = dt.Rows(0)
                 TxIdProduccion.Text = row("IdProduccion")
@@ -91,7 +87,6 @@ Public Class LIQUIDACIONES
                 NuPrecio.Value = row("Precio")
                 CbProducto.Text = CStr(row("Producto"))
                 CbEstatus.SelectedValue = CStr(row("IdEstatus"))
-
                 CargaBotes(TxIdProduccion.Text)
             End If
         Catch ex As Exception
@@ -110,6 +105,7 @@ Public Class LIQUIDACIONES
             da.Fill(dt)
             DgBotesIngresados.DataSource = dt
             cnn.Close()
+            FormatoGridView()
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -131,16 +127,13 @@ Public Class LIQUIDACIONES
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
             cmd.ExecuteNonQuery()
-
         Catch ex As Exception
             MsgBox("Problemas al conectar con al base de datos ")
         Finally
             cnn.Close()
             Dim opc As DialogResult = MessageBox.Show("¿Desea imprimir el reporte de liquidacion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If opc = DialogResult.Yes Then
-
                 ImprimirReporte()
-
             End If
         End Try
     End Sub
@@ -150,5 +143,18 @@ Public Class LIQUIDACIONES
     End Sub
     Private Sub TsImprimir_Click(sender As Object, e As EventArgs) Handles TsImprimir.Click
         ImprimirReporte()
+    End Sub
+
+    Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripLabel1.Click
+        Close()
+    End Sub
+    Private Sub FormatoGridView()
+        DgBotesIngresados.Columns(0).HeaderText = "ID"
+        DgBotesIngresados.Columns(1).HeaderText = "ID Empleado"
+        DgBotesIngresados.Columns(2).HeaderText = "Botes Recibidos"
+        DgBotesIngresados.Columns(4).Visible = False
+        DgBotesIngresados.Columns(5).HeaderText = "Precio Bote"
+        DgBotesIngresados.Columns.Item("PrecioBote").DefaultCellStyle.Format = "###,##0.00"
+        DgBotesIngresados.Columns(6).HeaderText = "Dia"
     End Sub
 End Class

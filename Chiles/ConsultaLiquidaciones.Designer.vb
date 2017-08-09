@@ -164,6 +164,7 @@ Partial Class ConsultaLiquidaciones
         Me.Controls.Add(Me.DtFinal)
         Me.Controls.Add(Me.DtInicial)
         Me.Name = "ConsultaLiquidaciones"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Consulta"
         CType(Me.DgProducciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
