@@ -18,4 +18,12 @@ Public Class FInicio
         CatalogosToolStripMenuItem.BackColor = Color.Red
         Close()
     End Sub
+
+    Private Sub ReporteDeLiquidacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeLiquidacionesToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub FInicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

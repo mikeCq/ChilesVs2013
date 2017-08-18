@@ -31,6 +31,7 @@ Partial Class FInicio
         Me.LiquidacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UtilidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeLiquidacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -100,10 +101,17 @@ Partial Class FInicio
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteDeLiquidacionesToolStripMenuItem})
         Me.ReportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(147, 26)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
+        'ReporteDeLiquidacionesToolStripMenuItem
+        '
+        Me.ReporteDeLiquidacionesToolStripMenuItem.Name = "ReporteDeLiquidacionesToolStripMenuItem"
+        Me.ReporteDeLiquidacionesToolStripMenuItem.Size = New System.Drawing.Size(273, 26)
+        Me.ReporteDeLiquidacionesToolStripMenuItem.Text = "Reporte de Liquidaciones"
         '
         'SalirToolStripMenuItem
         '
@@ -143,5 +151,5 @@ Partial Class FInicio
     Friend WithEvents UtilidadesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-
+    Friend WithEvents ReporteDeLiquidacionesToolStripMenuItem As ToolStripMenuItem
 End Class
