@@ -123,29 +123,33 @@ Public Class LIQUIDACIONES
     End Sub
     Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
         Dim Contador As Integer
-        Try
-            For Contador = 0 To DgLiquidaciones.RowCount - 1
-                If DgLiquidaciones.Rows(Contador).Cells("ChCol").Value = True Then
-                    TxIdProduccion.Text = DgLiquidaciones.Rows(Contador).Cells(0).Value
-                    If cnn.State <> ConnectionState.Open Then cnn.Open()
-                    cmd = New SqlCommand("sp_InsLiqDet", cnn)
-                    cmd.CommandType = CommandType.StoredProcedure
-                    cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
-                    cmd.ExecuteNonQuery()
+        If DgBotesIngresados.RowCount > 0 Then
+            Try
+                For Contador = 0 To DgLiquidaciones.RowCount - 1
+                    If DgLiquidaciones.Rows(Contador).Cells("ChCol").Value = True Then
+                        TxIdProduccion.Text = DgLiquidaciones.Rows(Contador).Cells(0).Value
+                        If cnn.State <> ConnectionState.Open Then cnn.Open()
+                        cmd = New SqlCommand("sp_InsLiqDet", cnn)
+                        cmd.CommandType = CommandType.StoredProcedure
+                        cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
+                        cmd.ExecuteNonQuery()
 
+                    End If
+                Next Contador
+                Dim opc As DialogResult = MessageBox.Show("¿Desea imprimir el reporte de liquidacion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                If opc = DialogResult.Yes Then
+                    'ImprimirReporte()
+                    ImprimirGlobal()
+                    TxIdProduccion.Text = ""
                 End If
-            Next Contador
-            Dim opc As DialogResult = MessageBox.Show("¿Desea imprimir el reporte de liquidacion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If opc = DialogResult.Yes Then
-                'ImprimirReporte()
-                ImprimirGlobal()
-                TxIdProduccion.Text = ""
-            End If
-        Catch ex As Exception
-            MsgBox("Problemas al conectar con al base de datos ")
-        Finally
-            cnn.Close()
-        End Try
+            Catch ex As Exception
+                MsgBox("Problemas al conectar con al base de datos ")
+            Finally
+                cnn.Close()
+            End Try
+        Else
+            MessageBox.Show("No hay botes agregados, agreguelos antes de guardar", "Aviso")
+        End If
     End Sub
     Private Sub ImprimirReporte()
         _codigoProduccion = TxIdProduccion.Text
@@ -224,7 +228,7 @@ Public Class LIQUIDACIONES
                     'Dim da As New SqlClient.SqlDataAdapter(cmd)
                     'Dim dt As New DataTable
                     'da.Fill(dt)
-                    TxIdProduccion.Text = DgLiquidaciones.Rows(Contador).Cells(0).Value
+                    TxIdProduccion.Text = DgLiquidaciones.Rows(Contador).Cells("Idproduccion").Value
                     CargaBotes(TxIdProduccion.Text)
                 End If
             Next Contador
