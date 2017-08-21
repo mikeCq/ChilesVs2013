@@ -116,6 +116,8 @@ Public Class LIQUIDACIONES
         NuTotalPagar.Value = 0
         CbEstatus.SelectedValue = -1
         CbProducto.Text = ""
+        DgLiquidaciones.DataSource = ""
+        DgLiquidaciones.Columns.Clear()
         DgBotesIngresados.DataSource = ""
         DgBotesIngresados.Columns.Clear()
     End Sub

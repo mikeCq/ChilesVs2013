@@ -111,7 +111,12 @@ Public Class Produccion
         DgBoteIngresado.DataSource = dt
         cnn.Close()
     End Sub
+
     Private Sub CapturaBotes(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxCaptura.KeyPress
+        If e.KeyChar = "." Then
+            e.KeyChar = ""
+            Exit Sub
+        End If
         If InStr(1, "0123456789." & Chr(8), e.KeyChar) = 0 Then
             e.Handled = True
             e.KeyChar = CChar("")
