@@ -163,13 +163,13 @@ Public Class LIQUIDACIONES
         Close()
     End Sub
     Private Sub FormatoGridView()
-        DgBotesIngresados.Columns(0).Visible = False
-        DgBotesIngresados.Columns(1).HeaderText = "ID Empleado"
-        DgBotesIngresados.Columns(2).HeaderText = "Botes Recibidos"
-        DgBotesIngresados.Columns(4).HeaderText = "Id Producción"
-        DgBotesIngresados.Columns(5).HeaderText = "Precio Bote"
-        DgBotesIngresados.Columns.Item("PrecioBote").DefaultCellStyle.Format = "###,##0.00"
-        DgBotesIngresados.Columns(6).HeaderText = "Dia"
+        DgBotesIngresados.Columns().Item("IdBotes").Visible = False
+        DgBotesIngresados.Columns().Item("Empleado").HeaderText = "ID Empleado"
+        DgBotesIngresados.Columns().Item("BotesRecibidos").HeaderText = "Botes Recibidos"
+        DgBotesIngresados.Columns().Item("IdProduccion").HeaderText = "Id Producción"
+        DgBotesIngresados.Columns().Item("PrecioBote").HeaderText = "Precio Bote"
+        DgBotesIngresados.Columns().Item("PrecioBote").DefaultCellStyle.Format = "###,##0.00"
+        DgBotesIngresados.Columns().Item("FechaLetra").HeaderText = "Dia"
     End Sub
     Private Sub LlenarLiquidacionesEncabezado()
         cnn.Open()
@@ -186,13 +186,13 @@ Public Class LIQUIDACIONES
         FormatoGridViewEncabezado()
     End Sub
     Private Sub FormatoGridViewEncabezado()
-        DgLiquidaciones.Columns(0).Visible = True
-        DgLiquidaciones.Columns(0).HeaderText = "Id Produccion"
-        DgLiquidaciones.Columns(2).HeaderText = "Precio Bote"
-        DgLiquidaciones.Columns(3).HeaderText = "Cantidad Botes"
-        DgLiquidaciones.Columns(4).HeaderText = "Total"
-        DgLiquidaciones.Columns(5).HeaderText = "Producto"
-        DgLiquidaciones.Columns(6).Visible = False
+        DgLiquidaciones.Columns().Item("IdProduccion").Visible = True
+        DgLiquidaciones.Columns().Item("IdProduccion").HeaderText = "Id Produccion"
+        DgLiquidaciones.Columns().Item("Precio").HeaderText = "Precio Bote"
+        DgLiquidaciones.Columns().Item("CantidadBotes").HeaderText = "Cantidad Botes"
+        DgLiquidaciones.Columns().Item("SumaBotes").HeaderText = "Total"
+        DgLiquidaciones.Columns().Item("Producto").HeaderText = "Producto"
+        DgLiquidaciones.Columns().Item("IdEstatus").Visible = False
         If DgLiquidaciones.Columns("ChCol") Is Nothing Then
             Dim chk As New DataGridViewCheckBoxColumn()
             DgLiquidaciones.Columns.Add(chk)
@@ -233,6 +233,9 @@ Public Class LIQUIDACIONES
                 End If
             Next Contador
             DgBotesIngresados.DataSource = dt
+            If DgBotesIngresados.Rows.Count = 0 Then
+                Exit Sub
+            End If
             FormatoGridView()
             'Dim row As DataRow = dt.Rows(0)
             'TxIdProduccion.Text = row("IdProduccion")
