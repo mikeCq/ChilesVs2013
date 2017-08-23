@@ -18,6 +18,10 @@ Public Class PRODUCTOS
         Nuevo()
     End Sub
     Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
+        If TxProducto.Text = "" Then
+            MsgBox("Campos vacios")
+            Exit Sub
+        End If
         Try
             cnn.Open()
             cmd = New SqlCommand("sp_InsProducto", cnn)
@@ -26,12 +30,14 @@ Public Class PRODUCTOS
             cmd.Parameters.Add(New SqlParameter("@Nombre", TxProducto.Text))
             cmd.Parameters("@IdProducto").Direction = ParameterDirection.InputOutput
             cmd.ExecuteNonQuery()
-            TxIdProducto.Text = cmd.Parameters("@IdProducto").Value           
+            TxIdProducto.Text = cmd.Parameters("@IdProducto").Value
         Catch ex As Exception
         Finally
             cnn.Close()
             CargarData()
             FormatoGridView()
+            TxIdProducto.Text = ""
+            TxProducto.Text = ""
         End Try
     End Sub
     Private Sub CargarData()
