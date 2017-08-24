@@ -117,6 +117,7 @@ Public Class LIQUIDACIONES
         NuTotalPagar.Value = 0.00
         CbEstatus.SelectedValue = -1
         CbProducto.Text = ""
+        TsGuardar.Enabled = True
         DgLiquidaciones.DataSource = ""
         DgLiquidaciones.Columns.Clear()
         DgBotesIngresados.DataSource = ""
@@ -150,9 +151,9 @@ Public Class LIQUIDACIONES
                 Next Contador
                 Dim opc As DialogResult = MessageBox.Show("¿Desea imprimir el reporte de liquidacion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
                 If opc = DialogResult.Yes Then
-                    'ImprimirReporte()
                     ImprimirGlobal()
                     TxIdProduccion.Text = ""
+                    TsGuardar.Enabled = False
                 End If
             Catch ex As Exception
                 MsgBox("Problemas al conectar con al base de datos ")
