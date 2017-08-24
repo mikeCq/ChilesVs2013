@@ -104,11 +104,13 @@ Partial Class FInicio
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteDeLiquidacionesToolStripMenuItem})
         Me.ReportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(147, 26)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(152, 26)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'ReporteDeLiquidacionesToolStripMenuItem
         '
+        Me.ReporteDeLiquidacionesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ReporteDeLiquidacionesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ReporteDeLiquidacionesToolStripMenuItem.Name = "ReporteDeLiquidacionesToolStripMenuItem"
         Me.ReporteDeLiquidacionesToolStripMenuItem.Size = New System.Drawing.Size(273, 26)
         Me.ReporteDeLiquidacionesToolStripMenuItem.Text = "Reporte de Liquidaciones"

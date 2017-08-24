@@ -120,7 +120,7 @@ Partial Class PRODUCTOS
         Me.TsNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TsNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TsNuevo.Name = "TsNuevo"
-        Me.TsNuevo.Size = New System.Drawing.Size(42, 22)
+        Me.TsNuevo.Size = New System.Drawing.Size(44, 22)
         Me.TsNuevo.Text = "Nuevo"
         Me.TsNuevo.ToolTipText = "Nuevo"
         Me.TsNuevo.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
@@ -135,7 +135,7 @@ Partial Class PRODUCTOS
         Me.TsGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TsGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TsGuardar.Name = "TsGuardar"
-        Me.TsGuardar.Size = New System.Drawing.Size(110, 22)
+        Me.TsGuardar.Size = New System.Drawing.Size(116, 22)
         Me.TsGuardar.Text = "Guardar/Actualizar"
         Me.TsGuardar.ToolTipText = "Guardar/Actualizar"
         '
@@ -149,7 +149,7 @@ Partial Class PRODUCTOS
         Me.TsEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TsEliminar.Name = "TsEliminar"
-        Me.TsEliminar.Size = New System.Drawing.Size(54, 22)
+        Me.TsEliminar.Size = New System.Drawing.Size(55, 22)
         Me.TsEliminar.Text = "Eliminar"
         Me.TsEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.TsEliminar.ToolTipText = "Eliminar"
@@ -163,7 +163,7 @@ Partial Class PRODUCTOS
         '
         Me.ToolStripLabel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(29, 22)
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(31, 22)
         Me.ToolStripLabel1.Text = "Salir"
         '
         'PRODUCTOS

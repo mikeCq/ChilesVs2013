@@ -3,43 +3,24 @@ Imports System.Data.SqlClient
 Public Class ConsultaLiquidaciones
     Dim cnn As New SqlConnection(VarGlob.ConexionPrincipal)
     Dim cmd As SqlCommand
-    Private _codigoProduccion As Integer
-    Public Property CodigoProduccion() As Integer
+    Private _codigoLiquidacionEncabezado As String
+    Public Property CodigoLiquidacionEncabezado() As String
         Get
-            Return _codigoProduccion
+            Return _codigoLiquidacionEncabezado
         End Get
-        Set(ByVal value As Integer)
-            _codigoProduccion = value
+        Set(ByVal value As String)
+            _codigoLiquidacionEncabezado = value
         End Set
     End Property
     Private Sub ConsultaLiquidaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        llenaCombos()
+        cargarData()
     End Sub
-    Private Sub llenaCombos()
-        cnn.Open()
-        Dim da As SqlDataAdapter
-        Dim ds As DataSet
-        Dim cmdllenaCbProd As SqlCommand
-        cmdllenaCbProd = New SqlCommand("sp_LlenaDgProductos")
-        cmdllenaCbProd.CommandType = CommandType.StoredProcedure
-        cmdllenaCbProd.Connection = cnn
-        da = New SqlDataAdapter(cmdllenaCbProd)
-        ds = New DataSet()
-        da.Fill(ds)
-        CbProducto.DataSource = ds.Tables(0)
-        CbProducto.DisplayMember = "Nombre"
-        CbProducto.ValueMember = "IdProducto"
-        CbProducto.SelectedIndex = -1
-        cnn.Close()
-    End Sub
-
     Private Sub cargarData()
-        cnn.Open()
-        Dim cmd As New SqlCommand("sp_LlenarLiquidaciones", cnn)
+        If cnn.State <> ConnectionState.Open Then cnn.Open()
+        Dim cmd As New SqlCommand("sp_LlenaDgBusquedaLiquidacion", cnn)
         cmd.CommandType = CommandType.StoredProcedure
         cmd.Parameters.Add(New SqlParameter("@FechaIni", DtInicial.Value))
         cmd.Parameters.Add(New SqlParameter("@FechaFin", DtFinal.Value))
-        cmd.Parameters.Add(New SqlParameter("@Producto", CbProducto.Text))
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable
         da.Fill(dt)
@@ -48,14 +29,31 @@ Public Class ConsultaLiquidaciones
         FormatoGridView()
     End Sub
     Private Sub SeleccionaLiquidacion() Handles DgProducciones.DoubleClick
+        Dim Cadena As String = ""
         If DgProducciones.RowCount = 0 Then
             MessageBox.Show("No hay datos para seleccionar.")
         ElseIf Not DgProducciones Is Nothing Then
-            _codigoProduccion = CStr(DgProducciones.CurrentRow.Cells(0).Value)
-            Close()
+            _codigoLiquidacionEncabezado = obtenerProducciones(Cadena)
+            REPORTELIQUIDACIONGLOBAL.ShowDialog()
         End If
     End Sub
+    Private Function obtenerProducciones(ByVal concatenado As String)
+        Dim ds As New DsLiquidacionGlobal
+        Dim StrSql As String = "execute sp_ObtProduccionesLiquidadas '" & DgProducciones.CurrentRow.Cells("IdLiquidacionEncabezado").Value & "'"
+        Dim dtInforme As New DataTable
+        If cnn.State <> ConnectionState.Open Then cnn.Open()
 
+        Using dad As New SqlDataAdapter(StrSql, cnn)
+            dad.Fill(dtInforme)
+        End Using
+
+        For Each row As DataRow In dtInforme.Rows
+            concatenado = concatenado & "," & row("idproduccion")
+        Next
+
+        concatenado = concatenado.TrimStart(",")
+        Return concatenado
+    End Function
     Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripLabel1.Click
         cargarData()
     End Sub
@@ -65,10 +63,14 @@ Public Class ConsultaLiquidaciones
     End Sub
 
     Private Sub FormatoGridView()
-        DgProducciones.Columns(0).Visible = False
-        DgProducciones.Columns(2).HeaderText = "Precio Bote"
-        DgProducciones.Columns(3).HeaderText = "Cantidad Botes"
-        DgProducciones.Columns(4).HeaderText = "Total"
-        DgProducciones.Columns(6).Visible = False
+        'DgProducciones.Columns(0).Visible = False
+        'DgProducciones.Columns(2).HeaderText = "Precio Bote"
+        'DgProducciones.Columns(3).HeaderText = "Cantidad Botes"
+        'DgProducciones.Columns(4).HeaderText = "Total"
+        'DgProducciones.Columns(6).Visible = False
+    End Sub
+
+    Private Sub BtFiltrar_Click(sender As Object, e As EventArgs) Handles BtFiltrar.Click
+        cargarData()
     End Sub
 End Class

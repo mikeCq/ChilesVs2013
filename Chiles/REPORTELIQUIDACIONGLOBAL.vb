@@ -7,11 +7,12 @@ Public Class REPORTELIQUIDACIONGLOBAL
         Try
             Dim ds As New DsLiquidacionGlobal
 
-            Dim cadena As String = LIQUIDACIONES.ConcatenacionID
+            Dim cadena As String = IIf(ConsultaLiquidaciones.CodigoLiquidacionEncabezado Is Nothing, LIQUIDACIONES.ConcatenacionID, ConsultaLiquidaciones.CodigoLiquidacionEncabezado)
             Dim StrSql As String = "execute sp_ReporteLiquidacionGlobal '" & cadena & "'"
             Dim dtInforme As New DataTable
-            Dim Ruta As String = "C:\RPTCH\RPT\RptLiquidacionGlobal.rpt"
-            cnn.Open()
+            Dim Ruta As String = "C:\RPTCH\\RPT\RptLiquidacionGlobal.rpt"
+            If cnn.State <> ConnectionState.Open Then cnn.Open()
+
             Using dad As New SqlDataAdapter(StrSql, cnn)
                 dad.Fill(dtInforme)
             End Using

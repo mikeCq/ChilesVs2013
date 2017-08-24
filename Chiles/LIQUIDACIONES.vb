@@ -163,12 +163,12 @@ Public Class LIQUIDACIONES
             MessageBox.Show("No hay botes agregados, agreguelos antes de guardar", "Aviso")
         End If
     End Sub
-    Private Sub ImprimirReporte()
-        _codigoProduccion = TxIdProduccion.Text
-        REPORTELIQUIDACION.ShowDialog()
-    End Sub
+    'Private Sub ImprimirReporte()
+    '    _codigoProduccion = TxIdProduccion.Text
+    '    REPORTELIQUIDACIONGLOBAL.ShowDialog()
+    'End Sub
     Private Sub TsImprimir_Click(sender As Object, e As EventArgs) Handles TsImprimir.Click
-        ImprimirReporte()
+        ImprimirGlobal()
     End Sub
 
     Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripLabel1.Click

@@ -76,7 +76,7 @@ Public Class PRODUCTOS
                 cnn.Open()
                 Dim cmd As New SqlCommand("sp_SelProducto", cnn)
                 cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.Add(New SqlClient.SqlParameter("@idproducto", DgProductos.CurrentRow.Cells(0).Value))
+                cmd.Parameters.Add(New SqlClient.SqlParameter("@idproducto", DgProductos.CurrentRow.Cells("IdProducto").Value))
                 Dim da As New SqlClient.SqlDataAdapter(cmd)
                 Dim dt As New DataTable
                 da.Fill(dt)

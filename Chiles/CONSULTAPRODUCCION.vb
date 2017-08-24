@@ -62,7 +62,7 @@ Public Class CONSULTAPRODUCCION
         If DgProducciones.RowCount = 0 Then
             MessageBox.Show("No hay datos para seleccionar.")
         ElseIf Not DgProducciones Is Nothing Then
-            _codigoProduccion = CStr(DgProducciones.CurrentRow.Cells(0).Value)
+            _codigoProduccion = CStr(DgProducciones.CurrentRow.Cells("IdProduccion").Value)
             Close()
         End If
     End Sub

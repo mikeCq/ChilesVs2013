@@ -97,6 +97,7 @@ Public Class Produccion
                 FormatoGridView()
                 GbAbrir.Enabled = False
                 GbCaptura.Enabled = True
+                TxCaptura.Select()
             End Try
         End If
     End Sub

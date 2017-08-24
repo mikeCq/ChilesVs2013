@@ -44,6 +44,7 @@ Partial Class REPORTELIQUIDACIONGLOBAL
         Me.Controls.Add(Me.CRReporteGlobal)
         Me.Name = "REPORTELIQUIDACIONGLOBAL"
         Me.Text = "REPORTELIQUIDACIONGLOBAL"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
