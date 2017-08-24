@@ -23,25 +23,17 @@ Partial Class LIQUIDACIONES
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LIQUIDACIONES))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DgBotesIngresados = New System.Windows.Forms.DataGridView()
         Me.GbLiquidacion = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.DtFinal = New System.Windows.Forms.DateTimePicker()
-        Me.DtInicial = New System.Windows.Forms.DateTimePicker()
-        Me.CbProducto = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DtFecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxCantidadBotes = New System.Windows.Forms.TextBox()
-        Me.NuPrecio = New System.Windows.Forms.NumericUpDown()
         Me.NuTotalPagar = New System.Windows.Forms.NumericUpDown()
         Me.CbEstatus = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -58,9 +50,14 @@ Partial Class LIQUIDACIONES
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.BtAgregar = New System.Windows.Forms.Button()
         Me.DgLiquidaciones = New System.Windows.Forms.DataGridView()
+        Me.DtFinal = New System.Windows.Forms.DateTimePicker()
+        Me.DtInicial = New System.Windows.Forms.DateTimePicker()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.CbProducto = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.DgBotesIngresados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbLiquidacion.SuspendLayout()
-        CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NuTotalPagar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.DgLiquidaciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,10 +95,8 @@ Partial Class LIQUIDACIONES
         Me.GbLiquidacion.Controls.Add(Me.Label2)
         Me.GbLiquidacion.Controls.Add(Me.Label4)
         Me.GbLiquidacion.Controls.Add(Me.DtFecha)
-        Me.GbLiquidacion.Controls.Add(Me.Label8)
         Me.GbLiquidacion.Controls.Add(Me.Label3)
         Me.GbLiquidacion.Controls.Add(Me.TxCantidadBotes)
-        Me.GbLiquidacion.Controls.Add(Me.NuPrecio)
         Me.GbLiquidacion.Controls.Add(Me.NuTotalPagar)
         Me.GbLiquidacion.Controls.Add(Me.CbEstatus)
         Me.GbLiquidacion.Enabled = False
@@ -110,59 +105,6 @@ Partial Class LIQUIDACIONES
         Me.GbLiquidacion.Size = New System.Drawing.Size(799, 95)
         Me.GbLiquidacion.TabIndex = 15
         Me.GbLiquidacion.TabStop = False
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(590, 36)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(65, 13)
-        Me.Label7.TabIndex = 22
-        Me.Label7.Text = "Fecha final :"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(590, 10)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(72, 13)
-        Me.Label9.TabIndex = 23
-        Me.Label9.Text = "Fecha inicial :"
-        '
-        'DtFinal
-        '
-        Me.DtFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtFinal.Location = New System.Drawing.Point(668, 36)
-        Me.DtFinal.Name = "DtFinal"
-        Me.DtFinal.Size = New System.Drawing.Size(121, 20)
-        Me.DtFinal.TabIndex = 20
-        Me.DtFinal.Value = New Date(2000, 1, 1, 11, 18, 0, 0)
-        '
-        'DtInicial
-        '
-        Me.DtInicial.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtInicial.Location = New System.Drawing.Point(668, 10)
-        Me.DtInicial.Name = "DtInicial"
-        Me.DtInicial.Size = New System.Drawing.Size(121, 20)
-        Me.DtInicial.TabIndex = 21
-        Me.DtInicial.Value = New Date(2000, 1, 1, 10, 45, 0, 0)
-        '
-        'CbProducto
-        '
-        Me.CbProducto.FormattingEnabled = True
-        Me.CbProducto.Location = New System.Drawing.Point(74, 13)
-        Me.CbProducto.Name = "CbProducto"
-        Me.CbProducto.Size = New System.Drawing.Size(121, 21)
-        Me.CbProducto.TabIndex = 6
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 16)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(56, 13)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Producto :"
         '
         'Label6
         '
@@ -185,7 +127,7 @@ Partial Class LIQUIDACIONES
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(201, 42)
+        Me.Label4.Location = New System.Drawing.Point(201, 13)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(67, 13)
         Me.Label4.TabIndex = 8
@@ -199,19 +141,10 @@ Partial Class LIQUIDACIONES
         Me.DtFecha.Size = New System.Drawing.Size(121, 20)
         Me.DtFecha.TabIndex = 3
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(201, 16)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(43, 13)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Precio :"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(201, 68)
+        Me.Label3.Location = New System.Drawing.Point(201, 39)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 13)
         Me.Label3.TabIndex = 7
@@ -219,25 +152,16 @@ Partial Class LIQUIDACIONES
         '
         'TxCantidadBotes
         '
-        Me.TxCantidadBotes.Location = New System.Drawing.Point(284, 38)
+        Me.TxCantidadBotes.Location = New System.Drawing.Point(284, 9)
         Me.TxCantidadBotes.Name = "TxCantidadBotes"
         Me.TxCantidadBotes.Size = New System.Drawing.Size(121, 20)
         Me.TxCantidadBotes.TabIndex = 4
-        '
-        'NuPrecio
-        '
-        Me.NuPrecio.DecimalPlaces = 2
-        Me.NuPrecio.Location = New System.Drawing.Point(284, 13)
-        Me.NuPrecio.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
-        Me.NuPrecio.Name = "NuPrecio"
-        Me.NuPrecio.Size = New System.Drawing.Size(121, 20)
-        Me.NuPrecio.TabIndex = 5
-        Me.NuPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TxCantidadBotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'NuTotalPagar
         '
         Me.NuTotalPagar.DecimalPlaces = 2
-        Me.NuTotalPagar.Location = New System.Drawing.Point(284, 64)
+        Me.NuTotalPagar.Location = New System.Drawing.Point(284, 35)
         Me.NuTotalPagar.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.NuTotalPagar.Name = "NuTotalPagar"
         Me.NuTotalPagar.Size = New System.Drawing.Size(121, 20)
@@ -262,7 +186,7 @@ Partial Class LIQUIDACIONES
         '
         'TxIdProduccion
         '
-        Me.TxIdProduccion.Location = New System.Drawing.Point(653, 9)
+        Me.TxIdProduccion.Location = New System.Drawing.Point(667, 6)
         Me.TxIdProduccion.Name = "TxIdProduccion"
         Me.TxIdProduccion.Size = New System.Drawing.Size(121, 20)
         Me.TxIdProduccion.TabIndex = 13
@@ -348,33 +272,86 @@ Partial Class LIQUIDACIONES
         Me.DgLiquidaciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DgLiquidaciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
         Me.DgLiquidaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgLiquidaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgLiquidaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DgLiquidaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgLiquidaciones.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.DgLiquidaciones.Location = New System.Drawing.Point(12, 125)
         Me.DgLiquidaciones.Name = "DgLiquidaciones"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgLiquidaciones.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgLiquidaciones.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.DgLiquidaciones.RowHeadersVisible = False
         Me.DgLiquidaciones.RowHeadersWidth = 40
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgLiquidaciones.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgLiquidaciones.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DgLiquidaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgLiquidaciones.Size = New System.Drawing.Size(777, 102)
         Me.DgLiquidaciones.TabIndex = 19
+        '
+        'DtFinal
+        '
+        Me.DtFinal.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFinal.Location = New System.Drawing.Point(668, 36)
+        Me.DtFinal.Name = "DtFinal"
+        Me.DtFinal.Size = New System.Drawing.Size(121, 20)
+        Me.DtFinal.TabIndex = 20
+        Me.DtFinal.Value = New Date(2000, 1, 1, 11, 18, 0, 0)
+        '
+        'DtInicial
+        '
+        Me.DtInicial.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtInicial.Location = New System.Drawing.Point(668, 10)
+        Me.DtInicial.Name = "DtInicial"
+        Me.DtInicial.Size = New System.Drawing.Size(121, 20)
+        Me.DtInicial.TabIndex = 21
+        Me.DtInicial.Value = New Date(2000, 1, 1, 10, 45, 0, 0)
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(590, 36)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(65, 13)
+        Me.Label7.TabIndex = 22
+        Me.Label7.Text = "Fecha final :"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(590, 10)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(72, 13)
+        Me.Label9.TabIndex = 23
+        Me.Label9.Text = "Fecha inicial :"
+        '
+        'CbProducto
+        '
+        Me.CbProducto.FormattingEnabled = True
+        Me.CbProducto.Location = New System.Drawing.Point(74, 13)
+        Me.CbProducto.Name = "CbProducto"
+        Me.CbProducto.Size = New System.Drawing.Size(121, 21)
+        Me.CbProducto.TabIndex = 6
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(12, 16)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(56, 13)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "Producto :"
         '
         'LIQUIDACIONES
         '
@@ -395,7 +372,6 @@ Partial Class LIQUIDACIONES
         CType(Me.DgBotesIngresados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbLiquidacion.ResumeLayout(False)
         Me.GbLiquidacion.PerformLayout()
-        CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NuTotalPagar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
@@ -406,16 +382,12 @@ Partial Class LIQUIDACIONES
     End Sub
     Friend WithEvents DgBotesIngresados As System.Windows.Forms.DataGridView
     Friend WithEvents GbLiquidacion As System.Windows.Forms.GroupBox
-    Friend WithEvents CbProducto As System.Windows.Forms.ComboBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents DtFecha As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TxCantidadBotes As System.Windows.Forms.TextBox
-    Friend WithEvents NuPrecio As System.Windows.Forms.NumericUpDown
     Friend WithEvents NuTotalPagar As System.Windows.Forms.NumericUpDown
     Friend WithEvents CbEstatus As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -430,10 +402,12 @@ Partial Class LIQUIDACIONES
     Friend WithEvents TsConsultar As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents BtAgregar As Button
+    Friend WithEvents DgLiquidaciones As DataGridView
     Friend WithEvents Label7 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents DtFinal As DateTimePicker
     Friend WithEvents DtInicial As DateTimePicker
-    Friend WithEvents BtAgregar As Button
-    Friend WithEvents DgLiquidaciones As DataGridView
+    Friend WithEvents CbProducto As ComboBox
+    Friend WithEvents Label5 As Label
 End Class

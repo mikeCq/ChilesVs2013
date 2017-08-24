@@ -7,6 +7,7 @@ Public Class LIQUIDACIONES
     Dim dt As New DataTable
     Dim concatenado As String = ""
     Private _codigoProduccion As Integer
+    Dim IdLiquidacionEncabezado As Integer
     Public Property codigoProduccion() As Integer
         Get
             Return _codigoProduccion
@@ -110,10 +111,10 @@ Public Class LIQUIDACIONES
         End Try
     End Sub
     Private Sub Nuevo()
-        TxIdProduccion.Text = ""
-        TxCantidadBotes.Text = ""
+        TxIdProduccion.Text = "0.00"
+        TxCantidadBotes.Text = "0.00"
         DtFecha.Value = Now
-        NuTotalPagar.Value = 0
+        NuTotalPagar.Value = 0.00
         CbEstatus.SelectedValue = -1
         CbProducto.Text = ""
         DgLiquidaciones.DataSource = ""
@@ -125,15 +126,26 @@ Public Class LIQUIDACIONES
         Dim Contador As Integer
         If DgBotesIngresados.RowCount > 0 Then
             Try
+                cnn.Open()
+                Dim cmd As New SqlCommand("sp_InsLiqEnc", cnn)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Add(New SqlParameter("@IdLiquidacionEncabezado", 0))
+                cmd.Parameters.Add(New SqlParameter("@FechaLiquidacion", DtFecha.Value))
+                cmd.Parameters.Add(New SqlParameter("@PagoTotal", NuTotalPagar.Value))
+                cmd.Parameters.Add(New SqlParameter("@BotesTotal", TxCantidadBotes.Text))
+                cmd.Parameters("@IdLiquidacionEncabezado").Direction = ParameterDirection.InputOutput
+                cmd.ExecuteNonQuery()
+                IdLiquidacionEncabezado = cmd.Parameters("@IdLiquidacionEncabezado").Value
+                cnn.Close()
                 For Contador = 0 To DgLiquidaciones.RowCount - 1
                     If DgLiquidaciones.Rows(Contador).Cells("ChCol").Value = True Then
-                        TxIdProduccion.Text = DgLiquidaciones.Rows(Contador).Cells(0).Value
+                        TxIdProduccion.Text = DgLiquidaciones.Rows(Contador).Cells("IdProduccion").Value
                         If cnn.State <> ConnectionState.Open Then cnn.Open()
                         cmd = New SqlCommand("sp_InsLiqDet", cnn)
                         cmd.CommandType = CommandType.StoredProcedure
                         cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
+                        cmd.Parameters.Add(New SqlParameter("@IdLiquidacionEncabezado", IdLiquidacionEncabezado))
                         cmd.ExecuteNonQuery()
-
                     End If
                 Next Contador
                 Dim opc As DialogResult = MessageBox.Show("¿Desea imprimir el reporte de liquidacion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -222,13 +234,9 @@ Public Class LIQUIDACIONES
         Try
             For Contador = 0 To DgLiquidaciones.RowCount - 1
                 If DgLiquidaciones.Rows(Contador).Cells("ChCol").Value = True Then
-                    'Dim cmd As New SqlCommand("sp_selProduccion", cnn)
-                    'cmd.CommandType = CommandType.StoredProcedure
-                    'cmd.Parameters.Add(New SqlClient.SqlParameter("@IdProduccion", DgLiquidaciones.CurrentRow.Cells(0).Value))
-                    'Dim da As New SqlClient.SqlDataAdapter(cmd)
-                    'Dim dt As New DataTable
-                    'da.Fill(dt)
                     TxIdProduccion.Text = DgLiquidaciones.Rows(Contador).Cells("Idproduccion").Value
+                    TxCantidadBotes.Text = CInt(TxCantidadBotes.Text + DgLiquidaciones.Rows(Contador).Cells("CantidadBotes").Value)
+                    NuTotalPagar.Value = CDbl(NuTotalPagar.Value + DgLiquidaciones.Rows(Contador).Cells("SumaBotes").Value)
                     CargaBotes(TxIdProduccion.Text)
                 End If
             Next Contador
@@ -237,14 +245,6 @@ Public Class LIQUIDACIONES
                 Exit Sub
             End If
             FormatoGridView()
-            'Dim row As DataRow = dt.Rows(0)
-            'TxIdProduccion.Text = row("IdProduccion")
-            'DtFecha.Value = row("Fecha")
-            'TxCantidadBotes.Text = row("CantidadBotes")
-            'NuTotalPagar.Value = row("SumaBotes")
-            'NuPrecio.Value = row("Precio")
-            'CbProducto.Text = CStr(row("Producto"))
-            'CbEstatus.SelectedValue = CStr(row("IdEstatus"))            
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
