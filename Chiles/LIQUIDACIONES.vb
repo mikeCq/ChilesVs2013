@@ -5,6 +5,7 @@ Public Class LIQUIDACIONES
     Dim cmd As SqlCommand
     Dim DtBotes As New DataTable
     Dim dt As New DataTable
+    Dim concatenado As String = ""
     Private _codigoProduccion As Integer
     Public Property codigoProduccion() As Integer
         Get
@@ -12,6 +13,15 @@ Public Class LIQUIDACIONES
         End Get
         Set(value As Integer)
             _codigoProduccion = value
+        End Set
+    End Property
+    Private _ConcatenacionID As String
+    Public Property ConcatenacionID() As String
+        Get
+            Return _ConcatenacionID
+        End Get
+        Set(value As String)
+            _ConcatenacionID = value
         End Set
     End Property
     Private Sub LIQUIDACIONES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -148,7 +158,6 @@ Public Class LIQUIDACIONES
         DgBotesIngresados.Columns(0).Visible = False
         DgBotesIngresados.Columns(1).HeaderText = "ID Empleado"
         DgBotesIngresados.Columns(2).HeaderText = "Botes Recibidos"
-        DgBotesIngresados.Columns(4).Visible = True 'Id Produccion
         DgBotesIngresados.Columns(4).HeaderText = "Id Producción"
         DgBotesIngresados.Columns(5).HeaderText = "Precio Bote"
         DgBotesIngresados.Columns.Item("PrecioBote").DefaultCellStyle.Format = "###,##0.00"
@@ -169,16 +178,20 @@ Public Class LIQUIDACIONES
         FormatoGridViewEncabezado()
     End Sub
     Private Sub FormatoGridViewEncabezado()
-        Dim chk As New DataGridViewCheckBoxColumn()
-        DgLiquidaciones.Columns.Add(chk)
-        chk.HeaderText = "Check Data"
-        chk.Name = "ChCol"
         DgLiquidaciones.Columns(0).Visible = True
         DgLiquidaciones.Columns(0).HeaderText = "Id Produccion"
         DgLiquidaciones.Columns(2).HeaderText = "Precio Bote"
         DgLiquidaciones.Columns(3).HeaderText = "Cantidad Botes"
         DgLiquidaciones.Columns(4).HeaderText = "Total"
+        DgLiquidaciones.Columns(5).HeaderText = "Producto"
         DgLiquidaciones.Columns(6).Visible = False
+        If DgLiquidaciones.Columns("ChCol") Is Nothing Then
+            Dim chk As New DataGridViewCheckBoxColumn()
+            DgLiquidaciones.Columns.Add(chk)
+            chk.HeaderText = "Check Data"
+            chk.Name = "ChCol"
+            ' DgLiquidaciones.Columns.Insert(7, chk)
+        End If
     End Sub
     Private Sub BtAgregar_Click(sender As Object, e As EventArgs) Handles BtAgregar.Click
         Agregar()
@@ -224,5 +237,20 @@ Public Class LIQUIDACIONES
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
+    End Sub
+    Private Function concatenaId(ByVal IdConcatenados As String)
+        For Each row As DataGridViewRow In DgLiquidaciones.Rows
+            If row.Cells("ChCol").Value = True Then
+                concatenado = concatenado & "," & row.Cells("IdProduccion").Value
+            End If
+        Next
+        concatenado = concatenado.TrimStart(",")
+        Return IdConcatenados
+    End Function
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        concatenaId(concatenado)
+        _ConcatenacionID = concatenado
+        concatenado = ""
+        REPORTELIQUIDACIONGLOBAL.ShowDialog()
     End Sub
 End Class

@@ -117,6 +117,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChilesDBDataSet.vb">
+      <DependentUpon>ChilesDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ChilesDBDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +137,11 @@
     </Compile>
     <Compile Include="CONSULTAPRODUCCION.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DsLiquidacionGlobal.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsLiquidacionGlobal.xsd</DependentUpon>
     </Compile>
     <Compile Include="FINICIO.vb">
       <SubType>Form</SubType>
@@ -181,10 +189,22 @@
     <Compile Include="REPORTELIQUIDACION.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="REPORTELIQUIDACIONGLOBAL.Designer.vb">
+      <DependentUpon>REPORTELIQUIDACIONGLOBAL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTELIQUIDACIONGLOBAL.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RPT\RptLiquidacionDetalle.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptLiquidacionDetalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\RptLiquidacionGlobal.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptLiquidacionGlobal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RPT\RptLiquidacionTotal.vb">
@@ -223,9 +243,16 @@
     <EmbeddedResource Include="REPORTELIQUIDACION.resx">
       <DependentUpon>REPORTELIQUIDACION.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORTELIQUIDACIONGLOBAL.resx">
+      <DependentUpon>REPORTELIQUIDACIONGLOBAL.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RPT\RptLiquidacionDetalle.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptLiquidacionDetalle.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\RptLiquidacionGlobal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptLiquidacionGlobal.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RptLiquidacionTotal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -243,6 +270,17 @@
     </None>
     <None Include="ChilesDBDataSet.xss">
       <DependentUpon>ChilesDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DsLiquidacionGlobal.xsc">
+      <DependentUpon>DsLiquidacionGlobal.xsd</DependentUpon>
+    </None>
+    <None Include="DsLiquidacionGlobal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsLiquidacionGlobal.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DsLiquidacionGlobal.xss">
+      <DependentUpon>DsLiquidacionGlobal.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
