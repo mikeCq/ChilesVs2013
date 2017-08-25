@@ -28,6 +28,12 @@ Public Class ConsultaLiquidaciones
         cnn.Close()
         FormatoGridView()
     End Sub
+    Private Sub FormatoGridView()
+        DgProducciones.Columns("idliquidacionEncabezado").Visible = False
+        DgProducciones.Columns("FechaLiquidacion").HeaderText = "Fecha Liquidado"
+        DgProducciones.Columns("PagoTotal").HeaderText = "Total Pagado"
+        DgProducciones.Columns("BotesTotal").HeaderText = "Total de Botes"
+    End Sub
     Private Sub SeleccionaLiquidacion() Handles DgProducciones.DoubleClick
         Dim Cadena As String = ""
         If DgProducciones.RowCount = 0 Then
@@ -61,15 +67,6 @@ Public Class ConsultaLiquidaciones
     Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripLabel2.Click
         Close()
     End Sub
-
-    Private Sub FormatoGridView()
-        'DgProducciones.Columns(0).Visible = False
-        'DgProducciones.Columns(2).HeaderText = "Precio Bote"
-        'DgProducciones.Columns(3).HeaderText = "Cantidad Botes"
-        'DgProducciones.Columns(4).HeaderText = "Total"
-        'DgProducciones.Columns(6).Visible = False
-    End Sub
-
     Private Sub BtFiltrar_Click(sender As Object, e As EventArgs) Handles BtFiltrar.Click
         cargarData()
     End Sub

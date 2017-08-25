@@ -267,8 +267,4 @@ Public Class Produccion
         DgBoteIngresado.Columns(6).HeaderText = "Dia"
         DgBoteIngresado.Columns.Item("PrecioBote").DefaultCellStyle.Format = "###,##0.00"
     End Sub
-
-    Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
-
-    End Sub
 End Class

@@ -147,6 +147,7 @@ Partial Class Produccion
         Me.TxNombreDia.Name = "TxNombreDia"
         Me.TxNombreDia.Size = New System.Drawing.Size(114, 20)
         Me.TxNombreDia.TabIndex = 0
+        Me.TxNombreDia.Visible = False
         '
         'TxIdProduccion
         '
@@ -187,6 +188,7 @@ Partial Class Produccion
         Me.Label5.Size = New System.Drawing.Size(34, 13)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Dia :"
+        Me.Label5.Visible = False
         '
         'Label4
         '
