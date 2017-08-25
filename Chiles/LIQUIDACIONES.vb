@@ -125,18 +125,20 @@ Public Class LIQUIDACIONES
             For Contador = 0 To DgLiquidaciones.RowCount - 1
                 If DgLiquidaciones.Rows(Contador).Cells("ChCol").Value = True Then
                     TxIdProduccion.Text = DgLiquidaciones.Rows(Contador).Cells(0).Value
-                    cnn.Open()
+                    If cnn.State <> ConnectionState.Open Then cnn.Open()
                     cmd = New SqlCommand("sp_InsLiqDet", cnn)
                     cmd.CommandType = CommandType.StoredProcedure
                     cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
                     cmd.ExecuteNonQuery()
-                    Dim opc As DialogResult = MessageBox.Show("¿Desea imprimir el reporte de liquidacion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                    If opc = DialogResult.Yes Then
-                        ImprimirReporte()
-                        TxIdProduccion.Text = ""
-                    End If
+
                 End If
             Next Contador
+            Dim opc As DialogResult = MessageBox.Show("¿Desea imprimir el reporte de liquidacion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If opc = DialogResult.Yes Then
+                'ImprimirReporte()
+                ImprimirGlobal()
+                TxIdProduccion.Text = ""
+            End If
         Catch ex As Exception
             MsgBox("Problemas al conectar con al base de datos ")
         Finally
@@ -247,7 +249,7 @@ Public Class LIQUIDACIONES
         concatenado = concatenado.TrimStart(",")
         Return IdConcatenados
     End Function
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub ImprimirGlobal()
         concatenaId(concatenado)
         _ConcatenacionID = concatenado
         concatenado = ""

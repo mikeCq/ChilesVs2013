@@ -7,21 +7,14 @@ Public Class REPORTELIQUIDACIONGLOBAL
         Try
             Dim ds As New DsLiquidacionGlobal
 
-            cnn.Open()
-            Dim daInforme As New SqlCommand("sp_ReporteLiquidacionGlobal", cnn)
-
-            Dim Ruta As String = "C:\RPTCH\RPT\RptLiquidacionGlobal.rpt"
-            daInforme.CommandType = CommandType.StoredProcedure
-            Dim NombreCampo As New SqlClient.SqlParameter()
-            NombreCampo.ParameterName = "@IdProduccion"
-            NombreCampo.SqlDbType = SqlDbType.NVarChar
-            NombreCampo.Value = LIQUIDACIONES.ConcatenacionID 'LIQUIDACIONES.codigoProduccion
-            daInforme.Parameters.Add(NombreCampo)
-            Dim dasp_Informe As New SqlClient.SqlDataAdapter()
-            dasp_Informe.SelectCommand = daInforme
+            Dim cadena As String = LIQUIDACIONES.ConcatenacionID
+            Dim StrSql As String = "execute sp_ReporteLiquidacionGlobal '" & cadena & "'"
             Dim dtInforme As New DataTable
-            dasp_Informe.Fill(dtInforme)
-
+            Dim Ruta As String = "C:\RPTCH\RPT\RptLiquidacionGlobal.rpt"
+            cnn.Open()
+            Using dad As New SqlDataAdapter(StrSql, cnn)
+                dad.Fill(dtInforme)
+            End Using
             For Each row As DataRow In dtInforme.Rows
                 ds.Tables(0).Rows.Add(CInt(row("IdProduccion")), CStr(row("Producto")), CDec(row("Precio")), CInt(row("Empleado")), CInt(row("NoBotes")), CDec(row("Lunes")), CDec(row("Martes")), CDec(row("Miercoles")), CDec(row("Jueves")), CDec(row("Viernes")), CDec(row("Sabado")))
             Next
@@ -32,10 +25,8 @@ Public Class REPORTELIQUIDACIONGLOBAL
 
             CrReport.Load(Ruta)
             CrReport.SetDataSource(ds)
-            'CrReport.Subreports("LiquidacionDetallada").SetDataSource(dsSubinforme)
             CRReporteGlobal.ReportSource = CrReport
             cnn.Close()
-
         Catch ex As Exception
             MessageBox.Show("excepcion: " & ex.Message, "Mostrando Reporte")
             cnn.Close()
