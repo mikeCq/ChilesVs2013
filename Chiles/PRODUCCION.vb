@@ -68,7 +68,7 @@ Public Class Produccion
     End Sub
 
     Private Sub BtIniciar_Click(sender As Object, e As EventArgs) Handles BtIniciar.Click
-
+        ÍniciarProduccion()
     End Sub
     Private Sub ÍniciarProduccion()
         If NuPrecio.Value = 0 Or CbProducto.SelectedValue = Nothing Or CbProducto.Text = "" Then
@@ -180,8 +180,7 @@ Public Class Produccion
                 CbProducto.Text = CStr(row("Producto"))
                 CbEstatus.SelectedValue = row("IdEstatus")
                 CargaBotes(TxIdProduccion.Text)
-                GbAbrir.Enabled = False
-                GbCaptura.Enabled = True
+                InhabilitarControles()
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -272,6 +271,24 @@ Public Class Produccion
     End Sub
 
     Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
-
+        Guardar()
+        NuPrecio.Enabled = False
+    End Sub
+    Private Sub InhabilitarControles()
+        CbProducto.Enabled = False
+        NuPrecio.Enabled = False
+        CbEstatus.Enabled = False
+    End Sub
+    Private Sub TsModificarPrecio_Click(sender As Object, e As EventArgs) Handles TsModificarPrecio.Click
+        NuPrecio.Enabled = True
+    End Sub
+    Private Sub Guardar()
+        If cnn.State <> ConnectionState.Open Then cnn.Open()
+        Dim cmd As New SqlCommand("sp_ActPrePro", cnn)
+        cmd.CommandType = CommandType.StoredProcedure
+        cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
+        cmd.Parameters.Add(New SqlParameter("@Precio", NuPrecio.Value))
+        cmd.ExecuteNonQuery()
+        cnn.Close()
     End Sub
 End Class

@@ -42,6 +42,8 @@ Partial Class Produccion
         Me.TsNuevo = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsGuardar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TsModificarPrecio = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsEliminar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
@@ -50,8 +52,6 @@ Partial Class Produccion
         Me.TsSalir = New System.Windows.Forms.ToolStripLabel()
         Me.DgBoteIngresado = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TsModificar = New System.Windows.Forms.ToolStripLabel()
         Me.GbCaptura.SuspendLayout()
         Me.GbAbrir.SuspendLayout()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -218,7 +218,7 @@ Partial Class Produccion
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.Gray
         Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.TsGuardar, Me.ToolStripSeparator4, Me.TsModificar, Me.ToolStripSeparator2, Me.TsEliminar, Me.ToolStripSeparator3, Me.TsConsultar, Me.ToolStripSeparator1, Me.TsSalir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.TsGuardar, Me.ToolStripSeparator4, Me.TsModificarPrecio, Me.ToolStripSeparator2, Me.TsEliminar, Me.ToolStripSeparator3, Me.TsConsultar, Me.ToolStripSeparator1, Me.TsSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(825, 25)
@@ -247,6 +247,18 @@ Partial Class Produccion
         Me.TsGuardar.Size = New System.Drawing.Size(116, 22)
         Me.TsGuardar.Text = "Guardar/Actualizar"
         Me.TsGuardar.ToolTipText = "Guardar/Actualizar"
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 25)
+        '
+        'TsModificarPrecio
+        '
+        Me.TsModificarPrecio.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.TsModificarPrecio.Name = "TsModificarPrecio"
+        Me.TsModificarPrecio.Size = New System.Drawing.Size(98, 22)
+        Me.TsModificarPrecio.Text = "Modificar Precio"
         '
         'ToolStripSeparator2
         '
@@ -319,18 +331,6 @@ Partial Class Produccion
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "CAPTURAR BOTES :"
         '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 25)
-        '
-        'TsModificar
-        '
-        Me.TsModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TsModificar.Name = "TsModificar"
-        Me.TsModificar.Size = New System.Drawing.Size(60, 22)
-        Me.TsModificar.Text = "Modificar"
-        '
         'Produccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -387,5 +387,5 @@ Partial Class Produccion
     Friend WithEvents CbProducto As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents TsModificar As ToolStripLabel
+    Friend WithEvents TsModificarPrecio As ToolStripLabel
 End Class
