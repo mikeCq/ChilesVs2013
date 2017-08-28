@@ -28,16 +28,16 @@ Partial Class Produccion
         Me.BtCerrar = New System.Windows.Forms.Button()
         Me.TxCaptura = New System.Windows.Forms.TextBox()
         Me.GbAbrir = New System.Windows.Forms.GroupBox()
+        Me.CbProducto = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.CbEstatus = New System.Windows.Forms.ComboBox()
         Me.NuPrecio = New System.Windows.Forms.NumericUpDown()
-        Me.CbProducto = New System.Windows.Forms.ComboBox()
         Me.TxNombreDia = New System.Windows.Forms.TextBox()
         Me.TxIdProduccion = New System.Windows.Forms.TextBox()
         Me.BtIniciar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.TsNuevo = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripSeparator()
@@ -50,6 +50,8 @@ Partial Class Produccion
         Me.TsSalir = New System.Windows.Forms.ToolStripLabel()
         Me.DgBoteIngresado = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TsModificar = New System.Windows.Forms.ToolStripLabel()
         Me.GbCaptura.SuspendLayout()
         Me.GbAbrir.SuspendLayout()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,7 +76,7 @@ Partial Class Produccion
         Me.GbCaptura.Location = New System.Drawing.Point(0, 210)
         Me.GbCaptura.Name = "GbCaptura"
         Me.GbCaptura.Size = New System.Drawing.Size(825, 84)
-        Me.GbCaptura.TabIndex = 8
+        Me.GbCaptura.TabIndex = 1
         Me.GbCaptura.TabStop = False
         '
         'BtCerrar
@@ -97,21 +99,40 @@ Partial Class Produccion
         '
         'GbAbrir
         '
+        Me.GbAbrir.Controls.Add(Me.CbProducto)
+        Me.GbAbrir.Controls.Add(Me.Label2)
         Me.GbAbrir.Controls.Add(Me.CbEstatus)
         Me.GbAbrir.Controls.Add(Me.NuPrecio)
-        Me.GbAbrir.Controls.Add(Me.CbProducto)
         Me.GbAbrir.Controls.Add(Me.TxNombreDia)
         Me.GbAbrir.Controls.Add(Me.TxIdProduccion)
         Me.GbAbrir.Controls.Add(Me.BtIniciar)
         Me.GbAbrir.Controls.Add(Me.Label1)
         Me.GbAbrir.Controls.Add(Me.Label5)
         Me.GbAbrir.Controls.Add(Me.Label4)
-        Me.GbAbrir.Controls.Add(Me.Label2)
         Me.GbAbrir.Location = New System.Drawing.Point(0, 34)
         Me.GbAbrir.Name = "GbAbrir"
         Me.GbAbrir.Size = New System.Drawing.Size(825, 135)
-        Me.GbAbrir.TabIndex = 7
+        Me.GbAbrir.TabIndex = 0
         Me.GbAbrir.TabStop = False
+        '
+        'CbProducto
+        '
+        Me.CbProducto.FormattingEnabled = True
+        Me.CbProducto.Location = New System.Drawing.Point(197, 9)
+        Me.CbProducto.Name = "CbProducto"
+        Me.CbProducto.Size = New System.Drawing.Size(125, 21)
+        Me.CbProducto.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label2.Location = New System.Drawing.Point(12, 12)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(66, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Producto :"
         '
         'CbEstatus
         '
@@ -125,20 +146,12 @@ Partial Class Produccion
         'NuPrecio
         '
         Me.NuPrecio.DecimalPlaces = 2
-        Me.NuPrecio.Location = New System.Drawing.Point(197, 9)
+        Me.NuPrecio.Location = New System.Drawing.Point(197, 36)
         Me.NuPrecio.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
         Me.NuPrecio.Name = "NuPrecio"
         Me.NuPrecio.Size = New System.Drawing.Size(125, 20)
-        Me.NuPrecio.TabIndex = 0
+        Me.NuPrecio.TabIndex = 1
         Me.NuPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'CbProducto
-        '
-        Me.CbProducto.FormattingEnabled = True
-        Me.CbProducto.Location = New System.Drawing.Point(197, 35)
-        Me.CbProducto.Name = "CbProducto"
-        Me.CbProducto.Size = New System.Drawing.Size(125, 21)
-        Me.CbProducto.TabIndex = 1
         '
         'TxNombreDia
         '
@@ -163,7 +176,7 @@ Partial Class Produccion
         Me.BtIniciar.Location = New System.Drawing.Point(6, 94)
         Me.BtIniciar.Name = "BtIniciar"
         Me.BtIniciar.Size = New System.Drawing.Size(125, 30)
-        Me.BtIniciar.TabIndex = 3
+        Me.BtIniciar.TabIndex = 2
         Me.BtIniciar.Text = "Abrir Produccion"
         Me.BtIniciar.UseVisualStyleBackColor = False
         '
@@ -172,7 +185,7 @@ Partial Class Produccion
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(12, 16)
+        Me.Label1.Location = New System.Drawing.Point(12, 43)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(51, 13)
         Me.Label1.TabIndex = 0
@@ -201,31 +214,20 @@ Partial Class Produccion
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Estatus :"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(12, 38)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Producto :"
-        '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.Gray
         Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.TsGuardar, Me.ToolStripSeparator2, Me.TsEliminar, Me.ToolStripSeparator3, Me.TsConsultar, Me.ToolStripSeparator1, Me.TsSalir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.TsGuardar, Me.ToolStripSeparator4, Me.TsModificar, Me.ToolStripSeparator2, Me.TsEliminar, Me.ToolStripSeparator3, Me.TsConsultar, Me.ToolStripSeparator1, Me.TsSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(825, 25)
-        Me.ToolStrip1.TabIndex = 5
+        Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'TsNuevo
         '
-        Me.TsNuevo.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.TsNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TsNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TsNuevo.Name = "TsNuevo"
         Me.TsNuevo.Size = New System.Drawing.Size(44, 22)
@@ -239,23 +241,21 @@ Partial Class Produccion
         '
         'TsGuardar
         '
-        Me.TsGuardar.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.TsGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TsGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TsGuardar.Name = "TsGuardar"
         Me.TsGuardar.Size = New System.Drawing.Size(116, 22)
         Me.TsGuardar.Text = "Guardar/Actualizar"
         Me.TsGuardar.ToolTipText = "Guardar/Actualizar"
-        Me.TsGuardar.Visible = False
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
-        Me.ToolStripSeparator2.Visible = False
         '
         'TsEliminar
         '
-        Me.TsEliminar.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.TsEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TsEliminar.Name = "TsEliminar"
         Me.TsEliminar.Size = New System.Drawing.Size(55, 22)
@@ -270,7 +270,7 @@ Partial Class Produccion
         '
         'TsConsultar
         '
-        Me.TsConsultar.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.TsConsultar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TsConsultar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TsConsultar.Name = "TsConsultar"
         Me.TsConsultar.Size = New System.Drawing.Size(123, 22)
@@ -283,7 +283,7 @@ Partial Class Produccion
         '
         'TsSalir
         '
-        Me.TsSalir.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.TsSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TsSalir.Name = "TsSalir"
         Me.TsSalir.Size = New System.Drawing.Size(31, 22)
         Me.TsSalir.Text = "Salir"
@@ -319,6 +319,18 @@ Partial Class Produccion
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "CAPTURAR BOTES :"
         '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 25)
+        '
+        'TsModificar
+        '
+        Me.TsModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.TsModificar.Name = "TsModificar"
+        Me.TsModificar.Size = New System.Drawing.Size(60, 22)
+        Me.TsModificar.Text = "Modificar"
+        '
         'Produccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -334,7 +346,7 @@ Partial Class Produccion
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Produccion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "PRODUCCION"
+        Me.Text = "Produccion"
         Me.GbCaptura.ResumeLayout(False)
         Me.GbCaptura.PerformLayout()
         Me.GbAbrir.ResumeLayout(False)
@@ -354,14 +366,12 @@ Partial Class Produccion
     Friend WithEvents GbAbrir As System.Windows.Forms.GroupBox
     Friend WithEvents CbEstatus As System.Windows.Forms.ComboBox
     Friend WithEvents NuPrecio As System.Windows.Forms.NumericUpDown
-    Friend WithEvents CbProducto As System.Windows.Forms.ComboBox
     Friend WithEvents TxNombreDia As System.Windows.Forms.TextBox
     Friend WithEvents TxIdProduccion As System.Windows.Forms.TextBox
     Friend WithEvents BtIniciar As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents TsNuevo As System.Windows.Forms.ToolStripLabel
     Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripSeparator
@@ -374,4 +384,8 @@ Partial Class Produccion
     Friend WithEvents TsSalir As System.Windows.Forms.ToolStripLabel
     Friend WithEvents DgBoteIngresado As System.Windows.Forms.DataGridView
     Friend WithEvents Label3 As Label
+    Friend WithEvents CbProducto As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents TsModificar As ToolStripLabel
 End Class

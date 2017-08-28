@@ -8,7 +8,7 @@ Module Conexion
     Sub abrir()
         Try
             cnn = New SqlConnection(VarGlob.ConexionPrincipal)
-            cnn.Open()
+            If cnn.State <> ConnectionState.Open Then cnn.Open()
         Catch ex As Exception
             MsgBox("No se pudo conectar" + ex.ToString)
         End Try

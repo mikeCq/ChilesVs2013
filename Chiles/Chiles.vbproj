@@ -117,6 +117,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACERCADE.Designer.vb">
+      <DependentUpon>ACERCADE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ACERCADE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ChilesDBDataSet.vb">
       <DependentUpon>ChilesDBDataSet.xsd</DependentUpon>
     </Compile>
@@ -213,9 +219,18 @@
       <DependentUpon>RptLiquidacionTotal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="SOPORTE.Designer.vb">
+      <DependentUpon>SOPORTE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SOPORTE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VarGlob.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ACERCADE.resx">
+      <DependentUpon>ACERCADE.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaLiquidaciones.resx">
       <DependentUpon>ConsultaLiquidaciones.vb</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +272,9 @@
     <EmbeddedResource Include="RPT\RptLiquidacionTotal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptLiquidacionTotal.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SOPORTE.resx">
+      <DependentUpon>SOPORTE.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

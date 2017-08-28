@@ -27,7 +27,6 @@ Public Class LIQUIDACIONES
     End Property
     Private Sub LIQUIDACIONES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Nuevo()
-        LlenarLiquidacionesEncabezado()
         llenaCombos()
     End Sub
     Private Sub TsNuevo_Click(sender As Object, e As EventArgs) Handles TsNuevo.Click
@@ -99,7 +98,7 @@ Public Class LIQUIDACIONES
     Private Sub CargaBotes(ByVal CodigoProducccion As Integer)
         Dim resultado As Boolean = False
         Try
-            cnn.Open()
+            If cnn.State <> ConnectionState.Open Then cnn.Open()
             Dim cmd As New SqlCommand("sp_LlenaDgBotes", cnn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@IdProduccion", CodigoProducccion))
@@ -117,17 +116,19 @@ Public Class LIQUIDACIONES
         NuTotalPagar.Value = 0.00
         CbEstatus.SelectedValue = -1
         CbProducto.Text = ""
+        TsImprimir.Enabled = False
         TsGuardar.Enabled = True
         DgLiquidaciones.DataSource = ""
         DgLiquidaciones.Columns.Clear()
         DgBotesIngresados.DataSource = ""
         DgBotesIngresados.Columns.Clear()
+        LlenarLiquidacionesEncabezado()
     End Sub
     Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
         Dim Contador As Integer
         If DgBotesIngresados.RowCount > 0 Then
             Try
-                cnn.Open()
+                If cnn.State <> ConnectionState.Open Then cnn.Open()
                 Dim cmd As New SqlCommand("sp_InsLiqEnc", cnn)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.Add(New SqlParameter("@IdLiquidacionEncabezado", 0))
@@ -153,10 +154,12 @@ Public Class LIQUIDACIONES
                 If opc = DialogResult.Yes Then
                     ImprimirGlobal()
                     TxIdProduccion.Text = ""
-                    TsGuardar.Enabled = False
                 End If
+                TsGuardar.Enabled = False
+                TsImprimir.Enabled = True
             Catch ex As Exception
                 MsgBox("Problemas al conectar con al base de datos ")
+                cnn.Close()
             Finally
                 cnn.Close()
             End Try
@@ -185,7 +188,7 @@ Public Class LIQUIDACIONES
         DgBotesIngresados.Columns().Item("FechaLetra").HeaderText = "Dia"
     End Sub
     Private Sub LlenarLiquidacionesEncabezado()
-        cnn.Open()
+        If cnn.State <> ConnectionState.Open Then cnn.Open()
         Dim cmd As New SqlCommand("sp_LlenarLiquidaciones", cnn)
         cmd.CommandType = CommandType.StoredProcedure
         cmd.Parameters.Add(New SqlParameter("@FechaIni", DtInicial.Value))

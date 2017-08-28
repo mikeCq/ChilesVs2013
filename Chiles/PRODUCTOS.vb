@@ -23,7 +23,7 @@ Public Class PRODUCTOS
             Exit Sub
         End If
         Try
-            cnn.Open()
+            If cnn.State <> ConnectionState.Open Then cnn.Open()
             cmd = New SqlCommand("sp_InsProducto", cnn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@IdProducto", 0))
@@ -41,7 +41,7 @@ Public Class PRODUCTOS
         End Try
     End Sub
     Private Sub CargarData()
-        cnn.Open()
+        If cnn.State <> ConnectionState.Open Then cnn.Open()
         Dim cmd As New SqlCommand("sp_LlenaDgProductos", cnn)
         cmd.CommandType = CommandType.StoredProcedure
         Dim da As New SqlDataAdapter(cmd)
@@ -53,7 +53,7 @@ Public Class PRODUCTOS
 
     Private Sub TsEliminar_Click(sender As Object, e As EventArgs) Handles TsEliminar.Click
         Try
-            cnn.Open()
+            If cnn.State <> ConnectionState.Open Then cnn.Open()
             cmd = New SqlCommand("sp_EliProducto", cnn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@IdProducto", TxIdProducto.Text))
@@ -73,7 +73,7 @@ Public Class PRODUCTOS
             MessageBox.Show("No hay datos para seleccionar.")
         ElseIf Not DgProductos Is Nothing Then
             Try
-                cnn.Open()
+                If cnn.State <> ConnectionState.Open Then cnn.Open()
                 Dim cmd As New SqlCommand("sp_SelProducto", cnn)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.Add(New SqlClient.SqlParameter("@idproducto", DgProductos.CurrentRow.Cells("IdProducto").Value))

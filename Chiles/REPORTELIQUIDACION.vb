@@ -9,7 +9,7 @@ Public Class REPORTELIQUIDACION
     Dim cmd As SqlCommand
     Private Sub REPORTELIQUIDACION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            cnn.Open()
+            If cnn.State <> ConnectionState.Open Then cnn.Open()
             Dim daInforme As New SqlCommand("sp_ReporteLiquidacionTotal", cnn)
 
             Dim Ruta As String = "C:\RPTCH\RPT\RptLiquidacionTotal.rpt"

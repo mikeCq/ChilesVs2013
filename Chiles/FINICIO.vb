@@ -16,14 +16,20 @@ Public Class FInicio
     Private Sub EstablecerPrecioDiarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstablecerPrecioDiarioToolStripMenuItem.Click
         Produccion.ShowDialog()
     End Sub
-
     Private Sub LiquidacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LiquidacionesToolStripMenuItem.Click
         LIQUIDACIONES.ShowDialog()
     End Sub
     Private Sub ReporteDeLiquidacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteDeLiquidacionesToolStripMenuItem.Click
         ConsultaLiquidaciones.ShowDialog()
     End Sub
+    Private Sub SoporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SoporteToolStripMenuItem.Click
+        SOPORTE.ShowDialog()
+    End Sub
+    Private Sub AsercaDeChilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsercaDeChilesToolStripMenuItem.Click
+        ACERCADE.ShowDialog()
+    End Sub
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        If cnn.State = ConnectionState.Open Then cnn.Close()
         Close()
     End Sub
 End Class

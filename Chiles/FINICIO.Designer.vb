@@ -33,6 +33,10 @@ Partial Class FInicio
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteDeLiquidacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ACERCADEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AsercaDeChilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SoporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VerLaAyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,7 +44,7 @@ Partial Class FInicio
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatalogosToolStripMenuItem, Me.ProduccionToolStripMenuItem, Me.UtilidadesToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatalogosToolStripMenuItem, Me.ProduccionToolStripMenuItem, Me.UtilidadesToolStripMenuItem, Me.ACERCADEToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -104,7 +108,7 @@ Partial Class FInicio
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteDeLiquidacionesToolStripMenuItem})
         Me.ReportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(152, 26)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(147, 26)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'ReporteDeLiquidacionesToolStripMenuItem
@@ -121,6 +125,38 @@ Partial Class FInicio
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(56, 25)
         Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'ACERCADEToolStripMenuItem
+        '
+        Me.ACERCADEToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerLaAyudaToolStripMenuItem, Me.SoporteToolStripMenuItem, Me.AsercaDeChilesToolStripMenuItem})
+        Me.ACERCADEToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ACERCADEToolStripMenuItem.Name = "ACERCADEToolStripMenuItem"
+        Me.ACERCADEToolStripMenuItem.Size = New System.Drawing.Size(71, 25)
+        Me.ACERCADEToolStripMenuItem.Text = "Ayuda"
+        '
+        'AsercaDeChilesToolStripMenuItem
+        '
+        Me.AsercaDeChilesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.AsercaDeChilesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.AsercaDeChilesToolStripMenuItem.Name = "AsercaDeChilesToolStripMenuItem"
+        Me.AsercaDeChilesToolStripMenuItem.Size = New System.Drawing.Size(176, 26)
+        Me.AsercaDeChilesToolStripMenuItem.Text = "Acerca De"
+        '
+        'SoporteToolStripMenuItem
+        '
+        Me.SoporteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.SoporteToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.SoporteToolStripMenuItem.Name = "SoporteToolStripMenuItem"
+        Me.SoporteToolStripMenuItem.Size = New System.Drawing.Size(176, 26)
+        Me.SoporteToolStripMenuItem.Text = "Soporte"
+        '
+        'VerLaAyudaToolStripMenuItem
+        '
+        Me.VerLaAyudaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.VerLaAyudaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.VerLaAyudaToolStripMenuItem.Name = "VerLaAyudaToolStripMenuItem"
+        Me.VerLaAyudaToolStripMenuItem.Size = New System.Drawing.Size(176, 26)
+        Me.VerLaAyudaToolStripMenuItem.Text = "Ver la Ayuda"
         '
         'FInicio
         '
@@ -154,4 +190,8 @@ Partial Class FInicio
     Friend WithEvents ReportesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReporteDeLiquidacionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ACERCADEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AsercaDeChilesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SoporteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VerLaAyudaToolStripMenuItem As ToolStripMenuItem
 End Class

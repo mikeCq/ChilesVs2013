@@ -23,7 +23,7 @@ Public Class CONSULTAPRODUCCION
         ElseIf DtFinal.Value < DtInicial.Value Then
             MessageBox.Show("La fecha final no puede ser menor a la inicial.", "Aviso")
         Else
-            cnn.Open()
+            If cnn.State <> ConnectionState.Open Then cnn.Open()
             Dim cmd As New SqlCommand("sp_LlenaDgBusquedaProduccion", cnn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@FechaIni", DtInicial.Value))
@@ -38,7 +38,7 @@ Public Class CONSULTAPRODUCCION
         End If
     End Sub
     Private Sub llenaCombos()
-        cnn.Open()
+        If cnn.State <> ConnectionState.Open Then cnn.Open()
         Dim da As SqlDataAdapter
         Dim ds As DataSet
 
@@ -73,7 +73,7 @@ Public Class CONSULTAPRODUCCION
         DgProducciones.DataSource = Nothing
     End Sub
     Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs)
-        cnn.Open()
+        If cnn.State <> ConnectionState.Open Then cnn.Open()
         Dim cmd As New SqlCommand("sp_ConProduccion", cnn)
         cmd.CommandType = CommandType.StoredProcedure
         cmd.Parameters.Add(New SqlParameter("@FechaIni", DtInicial.Value))

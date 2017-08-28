@@ -20,7 +20,7 @@ Public Class Produccion
         GbCaptura.Enabled = False
     End Sub
     Private Sub llenaCombos()
-        cnn.Open()
+        If cnn.State <> ConnectionState.Open Then cnn.Open()
         Dim da As SqlDataAdapter
         Dim ds As DataSet
 
@@ -68,12 +68,15 @@ Public Class Produccion
     End Sub
 
     Private Sub BtIniciar_Click(sender As Object, e As EventArgs) Handles BtIniciar.Click
+
+    End Sub
+    Private Sub ÍniciarProduccion()
         If NuPrecio.Value = 0 Or CbProducto.SelectedValue = Nothing Or CbProducto.Text = "" Then
             MessageBox.Show("No puedes iniciar la produccion con campos vacios.", "Aviso")
         Else
             Try
                 TxNombreDia.Text = UCase(WeekdayName(Weekday(DtFecha.Value)))
-                cnn.Open()
+                If cnn.State <> ConnectionState.Open Then cnn.Open()
                 cmd = New SqlCommand("sp_InsProduccion", cnn)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.Add(New SqlParameter("@IdProduccion", 0))
@@ -95,14 +98,14 @@ Public Class Produccion
                 cnn.Close()
                 cargarData()
                 FormatoGridView()
-                GbAbrir.Enabled = False
+                ' GbAbrir.Enabled = False
                 GbCaptura.Enabled = True
                 TxCaptura.Select()
             End Try
         End If
     End Sub
     Private Sub cargarData()
-        cnn.Open()
+        If cnn.State <> ConnectionState.Open Then cnn.Open()
         Dim cmd As New SqlCommand("sp_LlenaDgBotes", cnn)
         cmd.CommandType = CommandType.StoredProcedure
         cmd.Parameters.Add(New SqlParameter("@IdProduccion", IIf(TxIdProduccion.Text = "", 0, TxIdProduccion.Text)))
@@ -131,7 +134,7 @@ Public Class Produccion
                 MessageBox.Show("Campo de captura vacio.")
             Else
                 Try
-                    cnn.Open()
+                    If cnn.State <> ConnectionState.Open Then cnn.Open()
                     cmd = New SqlCommand("sp_InsBotes", cnn)
                     cmd.CommandType = CommandType.StoredProcedure
                     cmd.Parameters.Add(New SqlParameter("@IdBotes", 0))
@@ -188,7 +191,7 @@ Public Class Produccion
     Private Sub CargaBotes(ByVal CodigoProducccion As Integer)
         Dim resultado As Boolean = False
         Try
-            cnn.Open()
+            If cnn.State <> ConnectionState.Open Then cnn.Open()
             Dim cmd As New SqlCommand("sp_LlenaDgBotes", cnn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@IdProduccion", CodigoProducccion))
@@ -210,7 +213,7 @@ Public Class Produccion
                 Dim TotalPrecio As Decimal
                 TotalPrecio = DgBoteIngresado.RowCount * NuPrecio.Value
                 Try
-                    cnn.Open()
+                    If cnn.State <> ConnectionState.Open Then cnn.Open()
                     cmd = New SqlCommand("sp_InsProduccion", cnn)
                     cmd.CommandType = CommandType.StoredProcedure
                     cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
@@ -244,7 +247,7 @@ Public Class Produccion
             Dim id As Integer
             id = DgBoteIngresado.Rows(index).Cells("idbotes").Value
             Try
-                cnn.Open()
+                If cnn.State <> ConnectionState.Open Then cnn.Open()
                 Dim cmd As New SqlCommand("sp_EliBotes", cnn)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.Add(New SqlParameter("@IdBotes", id))
@@ -266,5 +269,9 @@ Public Class Produccion
         DgBoteIngresado.Columns(5).HeaderText = "Precio Bote"
         DgBoteIngresado.Columns(6).HeaderText = "Dia"
         DgBoteIngresado.Columns.Item("PrecioBote").DefaultCellStyle.Format = "###,##0.00"
+    End Sub
+
+    Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
+
     End Sub
 End Class
