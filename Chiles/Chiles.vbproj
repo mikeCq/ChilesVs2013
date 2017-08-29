@@ -189,12 +189,6 @@
     <Compile Include="PRODUCTOS.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="REPORTELIQUIDACION.Designer.vb">
-      <DependentUpon>REPORTELIQUIDACION.vb</DependentUpon>
-    </Compile>
-    <Compile Include="REPORTELIQUIDACION.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="REPORTELIQUIDACIONGLOBAL.Designer.vb">
       <DependentUpon>REPORTELIQUIDACIONGLOBAL.vb</DependentUpon>
     </Compile>
@@ -254,9 +248,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRODUCTOS.resx">
       <DependentUpon>PRODUCTOS.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="REPORTELIQUIDACION.resx">
-      <DependentUpon>REPORTELIQUIDACION.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTELIQUIDACIONGLOBAL.resx">
       <DependentUpon>REPORTELIQUIDACIONGLOBAL.vb</DependentUpon>
