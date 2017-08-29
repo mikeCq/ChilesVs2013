@@ -16,8 +16,20 @@ Public Class Produccion
         TxCaptura.Text = ""
         DgBoteIngresado.DataSource = ""
         DgBoteIngresado.Columns.Clear()
-        GbAbrir.Enabled = True
+        HabilitaControles()
+    End Sub
+    Private Sub HabilitaControles()
+        CbProducto.Enabled = True
+        NuPrecio.Enabled = True
+        BtIniciar.Enabled = True
         GbCaptura.Enabled = False
+        TsModificarPrecio.Enabled = True
+    End Sub
+    Private Sub DeshabilitaControles()
+        CbProducto.Enabled = False
+        NuPrecio.Enabled = False
+        BtIniciar.Enabled = False
+        GbCaptura.Enabled = True
     End Sub
     Private Sub llenaCombos()
         If cnn.State <> ConnectionState.Open Then cnn.Open()
@@ -66,7 +78,6 @@ Public Class Produccion
         CbEstatus.DisplayMember = "Descripcion"
         CbEstatus.SelectedIndex = 1
     End Sub
-
     Private Sub BtIniciar_Click(sender As Object, e As EventArgs) Handles BtIniciar.Click
         ÍniciarProduccion()
     End Sub
@@ -98,9 +109,9 @@ Public Class Produccion
                 cnn.Close()
                 cargarData()
                 FormatoGridView()
-                ' GbAbrir.Enabled = False
                 GbCaptura.Enabled = True
                 TxCaptura.Select()
+                DeshabilitaControles()
             End Try
         End If
     End Sub
@@ -232,14 +243,14 @@ Public Class Produccion
                 Finally
                     cnn.Close()
                     cargarData()
-                    GbAbrir.Enabled = False
                     GbCaptura.Enabled = False
+                    TsModificarPrecio.Enabled = False
                 End Try
             End If
         End If
     End Sub
     Private Sub TsEliminar_Click(sender As Object, e As EventArgs) Handles TsEliminar.Click
-        Dim opc As DialogResult = MessageBox.Show("¿Eliminar Bote?.", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim opc As DialogResult = MessageBox.Show("¿Eliminar Bote?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If opc = DialogResult.Yes Then
             Dim index As Integer
             index = DgBoteIngresado.CurrentCell.RowIndex
@@ -280,15 +291,27 @@ Public Class Produccion
         CbEstatus.Enabled = False
     End Sub
     Private Sub TsModificarPrecio_Click(sender As Object, e As EventArgs) Handles TsModificarPrecio.Click
-        NuPrecio.Enabled = True
+        Dim opc As DialogResult = MessageBox.Show("¿Modificar precio?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If opc = DialogResult.Yes Then
+            NuPrecio.Enabled = True
+        End If
     End Sub
     Private Sub Guardar()
-        If cnn.State <> ConnectionState.Open Then cnn.Open()
-        Dim cmd As New SqlCommand("sp_ActPrePro", cnn)
-        cmd.CommandType = CommandType.StoredProcedure
-        cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
-        cmd.Parameters.Add(New SqlParameter("@Precio", NuPrecio.Value))
-        cmd.ExecuteNonQuery()
-        cnn.Close()
+        Try
+            If cnn.State <> ConnectionState.Open Then cnn.Open()
+            Dim cmd As New SqlCommand("sp_ActPrePro", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
+            cmd.Parameters.Add(New SqlParameter("@Precio", NuPrecio.Value))
+            cmd.ExecuteNonQuery()
+            cnn.Close()
+            NuPrecio.Enabled = False
+        Catch ex As Exception
+            cnn.Close()
+            MsgBox(ex.ToString)
+        Finally
+            MessageBox.Show("Precio Actualizado!")
+        End Try
+
     End Sub
 End Class
