@@ -60,4 +60,3 @@ C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.vbpro
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.exe
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.xml
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.pdb
-C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.vbprojResolveAssemblyReference.cache

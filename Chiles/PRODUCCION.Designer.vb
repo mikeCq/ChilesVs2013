@@ -39,19 +39,19 @@ Partial Class Produccion
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.TsNuevo = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsGuardar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TsModificarPrecio = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsEliminar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsConsultar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TsSalir = New System.Windows.Forms.ToolStripButton()
         Me.DgBoteIngresado = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TsNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.TsModificarPrecio = New System.Windows.Forms.ToolStripButton()
-        Me.TsSalir = New System.Windows.Forms.ToolStripButton()
         Me.GbCaptura.SuspendLayout()
         Me.GbAbrir.SuspendLayout()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,7 +81,12 @@ Partial Class Produccion
         '
         'BtCerrar
         '
-        Me.BtCerrar.BackColor = System.Drawing.Color.White
+        Me.BtCerrar.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BtCerrar.BackgroundImage = CType(resources.GetObject("BtCerrar.BackgroundImage"), System.Drawing.Image)
+        Me.BtCerrar.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.BtCerrar.FlatAppearance.BorderSize = 5
+        Me.BtCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtCerrar.Location = New System.Drawing.Point(699, 35)
         Me.BtCerrar.Name = "BtCerrar"
         Me.BtCerrar.Size = New System.Drawing.Size(114, 40)
@@ -172,7 +177,12 @@ Partial Class Produccion
         '
         'BtIniciar
         '
-        Me.BtIniciar.BackColor = System.Drawing.Color.White
+        Me.BtIniciar.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BtIniciar.BackgroundImage = CType(resources.GetObject("BtIniciar.BackgroundImage"), System.Drawing.Image)
+        Me.BtIniciar.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.BtIniciar.FlatAppearance.BorderSize = 5
+        Me.BtIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtIniciar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtIniciar.Location = New System.Drawing.Point(6, 94)
         Me.BtIniciar.Name = "BtIniciar"
         Me.BtIniciar.Size = New System.Drawing.Size(125, 30)
@@ -225,6 +235,16 @@ Partial Class Produccion
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
         '
+        'TsNuevo
+        '
+        Me.TsNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.TsNuevo.Image = CType(resources.GetObject("TsNuevo.Image"), System.Drawing.Image)
+        Me.TsNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TsNuevo.Name = "TsNuevo"
+        Me.TsNuevo.Size = New System.Drawing.Size(64, 22)
+        Me.TsNuevo.Text = "Nuevo"
+        Me.TsNuevo.ToolTipText = "Nuevo"
+        '
         'ToolStripButton2
         '
         Me.ToolStripButton2.Name = "ToolStripButton2"
@@ -243,6 +263,15 @@ Partial Class Produccion
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 25)
+        '
+        'TsModificarPrecio
+        '
+        Me.TsModificarPrecio.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.TsModificarPrecio.Image = CType(resources.GetObject("TsModificarPrecio.Image"), System.Drawing.Image)
+        Me.TsModificarPrecio.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TsModificarPrecio.Name = "TsModificarPrecio"
+        Me.TsModificarPrecio.Size = New System.Drawing.Size(118, 22)
+        Me.TsModificarPrecio.Text = "Modificar Precio"
         '
         'ToolStripSeparator2
         '
@@ -277,6 +306,15 @@ Partial Class Produccion
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
         '
+        'TsSalir
+        '
+        Me.TsSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.TsSalir.Image = CType(resources.GetObject("TsSalir.Image"), System.Drawing.Image)
+        Me.TsSalir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TsSalir.Name = "TsSalir"
+        Me.TsSalir.Size = New System.Drawing.Size(51, 22)
+        Me.TsSalir.Text = "Salir"
+        '
         'DgBoteIngresado
         '
         Me.DgBoteIngresado.AllowUserToAddRows = False
@@ -307,34 +345,6 @@ Partial Class Produccion
         Me.Label3.Size = New System.Drawing.Size(260, 29)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "CAPTURAR BOTES :"
-        '
-        'TsNuevo
-        '
-        Me.TsNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TsNuevo.Image = CType(resources.GetObject("TsNuevo.Image"), System.Drawing.Image)
-        Me.TsNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.TsNuevo.Name = "TsNuevo"
-        Me.TsNuevo.Size = New System.Drawing.Size(64, 22)
-        Me.TsNuevo.Text = "Nuevo"
-        Me.TsNuevo.ToolTipText = "Nuevo"
-        '
-        'TsModificarPrecio
-        '
-        Me.TsModificarPrecio.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TsModificarPrecio.Image = CType(resources.GetObject("TsModificarPrecio.Image"), System.Drawing.Image)
-        Me.TsModificarPrecio.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.TsModificarPrecio.Name = "TsModificarPrecio"
-        Me.TsModificarPrecio.Size = New System.Drawing.Size(118, 22)
-        Me.TsModificarPrecio.Text = "Modificar Precio"
-        '
-        'TsSalir
-        '
-        Me.TsSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TsSalir.Image = CType(resources.GetObject("TsSalir.Image"), System.Drawing.Image)
-        Me.TsSalir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.TsSalir.Name = "TsSalir"
-        Me.TsSalir.Size = New System.Drawing.Size(51, 22)
-        Me.TsSalir.Text = "Salir"
         '
         'Produccion
         '

@@ -108,7 +108,6 @@ Public Class Produccion
             Finally
                 cnn.Close()
                 cargarData()
-                FormatoGridView()
                 GbCaptura.Enabled = True
                 TxCaptura.Select()
                 DeshabilitaControles()
@@ -125,6 +124,7 @@ Public Class Produccion
         da.Fill(dt)
         DgBoteIngresado.DataSource = dt
         cnn.Close()
+        FormatoGridView()
     End Sub
 
     Private Sub CapturaBotes(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxCaptura.KeyPress
@@ -192,6 +192,7 @@ Public Class Produccion
                 CbEstatus.SelectedValue = row("IdEstatus")
                 CargaBotes(TxIdProduccion.Text)
                 InhabilitarControles()
+                GbCaptura.Enabled = True
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -252,32 +253,36 @@ Public Class Produccion
     Private Sub TsEliminar_Click(sender As Object, e As EventArgs) Handles TsEliminar.Click
         Dim opc As DialogResult = MessageBox.Show("¿Eliminar Bote?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If opc = DialogResult.Yes Then
-            Dim index As Integer
-            index = DgBoteIngresado.CurrentCell.RowIndex
-            Dim id As Integer
-            id = DgBoteIngresado.Rows(index).Cells("idbotes").Value
-            Try
-                If cnn.State <> ConnectionState.Open Then cnn.Open()
-                Dim cmd As New SqlCommand("sp_EliBotes", cnn)
-                cmd.CommandType = CommandType.StoredProcedure
-                cmd.Parameters.Add(New SqlParameter("@IdBotes", id))
-                cmd.ExecuteNonQuery()
-                cnn.Close()
-                cargarData()
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            End Try
+            If DgBoteIngresado.RowCount > 0 Then
+                Dim index As Integer
+                index = DgBoteIngresado.CurrentCell.RowIndex
+                Dim id As Integer
+                id = DgBoteIngresado.Rows(index).Cells("idbotes").Value
+                Try
+                    If cnn.State <> ConnectionState.Open Then cnn.Open()
+                    Dim cmd As New SqlCommand("sp_EliBotes", cnn)
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.Add(New SqlParameter("@IdBotes", id))
+                    cmd.ExecuteNonQuery()
+                    cnn.Close()
+                    cargarData()
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            Else
+                MessageBox.Show("No hay botes para eliminar.")
+            End If
         End If
     End Sub
     Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles TsSalir.Click
         Close()
     End Sub
     Private Sub FormatoGridView()
-        DgBoteIngresado.Columns(0).Visible = False
-        DgBoteIngresado.Columns(2).HeaderText = "Botes Recibidos"
-        DgBoteIngresado.Columns(4).Visible = False 'id de prodcuccion
-        DgBoteIngresado.Columns(5).HeaderText = "Precio Bote"
-        DgBoteIngresado.Columns(6).HeaderText = "Dia"
+        DgBoteIngresado.Columns("idBotes").Visible = False
+        DgBoteIngresado.Columns("BotesRecibidos").HeaderText = "Botes Recibidos"
+        DgBoteIngresado.Columns("IdProduccion").Visible = False 'id de prodcuccion
+        DgBoteIngresado.Columns("PrecioBote").HeaderText = "Precio Bote"
+        DgBoteIngresado.Columns("FechaLetra").HeaderText = "Dia"
         DgBoteIngresado.Columns.Item("PrecioBote").DefaultCellStyle.Format = "###,##0.00"
     End Sub
 
@@ -289,6 +294,7 @@ Public Class Produccion
         CbProducto.Enabled = False
         NuPrecio.Enabled = False
         CbEstatus.Enabled = False
+        BtIniciar.Enabled = False
     End Sub
     Private Sub TsModificarPrecio_Click(sender As Object, e As EventArgs) Handles TsModificarPrecio.Click
         Dim opc As DialogResult = MessageBox.Show("¿Modificar precio?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
