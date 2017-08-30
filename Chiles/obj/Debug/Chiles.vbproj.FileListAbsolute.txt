@@ -24,8 +24,6 @@ C:\Users\MSISTEMAS\Documents\Visual Studio 2013\Projects\Chiles\Chiles\obj\Debug
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\ChilesDB.mdf
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\ChilesDB_log.ldf
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\Chiles.exe.config
-C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\Chiles.exe.manifest
-C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\Chiles.application
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\Chiles.exe
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\Chiles.pdb
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\Chiles.xml
@@ -48,7 +46,7 @@ C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\CrystalDecis
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\stdole.dll
-C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.vbprojResolveAssemblyReference.cache
+C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.ACERCADE.resources
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.ConsultaLiquidaciones.resources
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.CONSULTAPRODUCCION.resources
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.FInicio.resources
@@ -56,11 +54,10 @@ C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.LIQUI
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.Resources.resources
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.Produccion.resources
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.PRODUCTOS.resources
-C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.REPORTELIQUIDACION.resources
+C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.REPORTELIQUIDACIONGLOBAL.resources
+C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.SOPORTE.resources
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.vbproj.GenerateResource.Cache
-C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.TrustInfo.xml
-C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.exe.manifest
-C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.application
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.exe
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.xml
 C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.pdb
+C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\obj\Debug\Chiles.vbprojResolveAssemblyReference.cache

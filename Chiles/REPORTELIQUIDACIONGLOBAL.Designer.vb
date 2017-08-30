@@ -43,7 +43,7 @@ Partial Class REPORTELIQUIDACIONGLOBAL
         Me.ClientSize = New System.Drawing.Size(1014, 543)
         Me.Controls.Add(Me.CRReporteGlobal)
         Me.Name = "REPORTELIQUIDACIONGLOBAL"
-        Me.Text = "REPORTELIQUIDACIONGLOBAL"
+        Me.Text = "Reporte de Liquidacion"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
