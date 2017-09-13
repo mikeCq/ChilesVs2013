@@ -52,6 +52,7 @@ Partial Class Produccion
         Me.TsSalir = New System.Windows.Forms.ToolStripButton()
         Me.DgBoteIngresado = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.BtEliminarBote = New System.Windows.Forms.Button()
         Me.GbCaptura.SuspendLayout()
         Me.GbAbrir.SuspendLayout()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +72,7 @@ Partial Class Produccion
         'GbCaptura
         '
         Me.GbCaptura.BackColor = System.Drawing.Color.Transparent
+        Me.GbCaptura.Controls.Add(Me.BtEliminarBote)
         Me.GbCaptura.Controls.Add(Me.BtCerrar)
         Me.GbCaptura.Controls.Add(Me.TxCaptura)
         Me.GbCaptura.Location = New System.Drawing.Point(0, 210)
@@ -87,7 +89,7 @@ Partial Class Produccion
         Me.BtCerrar.FlatAppearance.BorderSize = 5
         Me.BtCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtCerrar.Location = New System.Drawing.Point(699, 35)
+        Me.BtCerrar.Location = New System.Drawing.Point(285, 35)
         Me.BtCerrar.Name = "BtCerrar"
         Me.BtCerrar.Size = New System.Drawing.Size(114, 40)
         Me.BtCerrar.TabIndex = 1
@@ -283,8 +285,8 @@ Partial Class Produccion
         Me.TsEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.TsEliminar.Name = "TsEliminar"
-        Me.TsEliminar.Size = New System.Drawing.Size(55, 22)
-        Me.TsEliminar.Text = "Eliminar"
+        Me.TsEliminar.Size = New System.Drawing.Size(120, 22)
+        Me.TsEliminar.Text = "Eliminar Produccion"
         Me.TsEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.TsEliminar.ToolTipText = "Eliminar"
         '
@@ -346,6 +348,21 @@ Partial Class Produccion
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "CAPTURAR BOTES :"
         '
+        'BtEliminarBote
+        '
+        Me.BtEliminarBote.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BtEliminarBote.BackgroundImage = CType(resources.GetObject("BtEliminarBote.BackgroundImage"), System.Drawing.Image)
+        Me.BtEliminarBote.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.BtEliminarBote.FlatAppearance.BorderSize = 5
+        Me.BtEliminarBote.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtEliminarBote.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtEliminarBote.Location = New System.Drawing.Point(405, 35)
+        Me.BtEliminarBote.Name = "BtEliminarBote"
+        Me.BtEliminarBote.Size = New System.Drawing.Size(114, 40)
+        Me.BtEliminarBote.TabIndex = 2
+        Me.BtEliminarBote.Text = "Eliminar Bote"
+        Me.BtEliminarBote.UseVisualStyleBackColor = False
+        '
         'Produccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -403,4 +420,5 @@ Partial Class Produccion
     Friend WithEvents TsNuevo As ToolStripButton
     Friend WithEvents TsModificarPrecio As ToolStripButton
     Friend WithEvents TsSalir As ToolStripButton
+    Friend WithEvents BtEliminarBote As Button
 End Class

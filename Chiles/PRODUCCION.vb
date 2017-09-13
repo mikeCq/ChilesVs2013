@@ -24,6 +24,7 @@ Public Class Produccion
         BtIniciar.Enabled = True
         GbCaptura.Enabled = False
         TsModificarPrecio.Enabled = True
+        TsEliminar.Enabled = True
     End Sub
     Private Sub DeshabilitaControles()
         CbProducto.Enabled = False
@@ -169,7 +170,7 @@ Public Class Produccion
         End If
     End Sub
     Private Sub TsNuevo_Click(sender As Object, e As EventArgs) Handles TsNuevo.Click
-        nuevo()
+        Nuevo()
     End Sub
     Private Sub TsConsultar_Click(sender As Object, e As EventArgs) Handles TsConsultar.Click
         Try
@@ -246,32 +247,27 @@ Public Class Produccion
                     cargarData()
                     GbCaptura.Enabled = False
                     TsModificarPrecio.Enabled = False
+                    TsEliminar.Enabled = False
                 End Try
             End If
         End If
     End Sub
     Private Sub TsEliminar_Click(sender As Object, e As EventArgs) Handles TsEliminar.Click
-        Dim opc As DialogResult = MessageBox.Show("¿Eliminar Bote?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If opc = DialogResult.Yes Then
-            If DgBoteIngresado.RowCount > 0 Then
-                Dim index As Integer
-                index = DgBoteIngresado.CurrentCell.RowIndex
-                Dim id As Integer
-                id = DgBoteIngresado.Rows(index).Cells("idbotes").Value
-                Try
-                    If cnn.State <> ConnectionState.Open Then cnn.Open()
-                    Dim cmd As New SqlCommand("sp_EliBotes", cnn)
-                    cmd.CommandType = CommandType.StoredProcedure
-                    cmd.Parameters.Add(New SqlParameter("@IdBotes", id))
-                    cmd.ExecuteNonQuery()
-                    cnn.Close()
-                    cargarData()
-                Catch ex As Exception
-                    MsgBox(ex.ToString)
-                End Try
-            Else
-                MessageBox.Show("No hay botes para eliminar.")
-            End If
+        If TxIdProduccion.Text = "" Then
+            MsgBox("Debe seleccionar una produccion para poder eliminarla")
+            Exit Sub
+        Else
+            Try
+                If cnn.State <> ConnectionState.Open Then cnn.Open()
+                Dim cmd As New SqlCommand("sp_EliProd", cnn)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.Add(New SqlParameter("@IdProduccion", CInt(TxIdProduccion.Text)))
+                cmd.ExecuteNonQuery()
+                cnn.Close()
+                Nuevo()
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
         End If
     End Sub
     Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles TsSalir.Click
@@ -318,6 +314,30 @@ Public Class Produccion
         Finally
             MessageBox.Show("Precio Actualizado!")
         End Try
+    End Sub
 
+    Private Sub BtEliminarBote_Click(sender As Object, e As EventArgs) Handles BtEliminarBote.Click
+        Dim opc As DialogResult = MessageBox.Show("¿Eliminar Bote?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If opc = DialogResult.Yes Then
+            If DgBoteIngresado.RowCount > 0 Then
+                Dim index As Integer
+                index = DgBoteIngresado.CurrentCell.RowIndex
+                Dim id As Integer
+                id = DgBoteIngresado.Rows(index).Cells("idbotes").Value
+                Try
+                    If cnn.State <> ConnectionState.Open Then cnn.Open()
+                    Dim cmd As New SqlCommand("sp_EliBotes", cnn)
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.Add(New SqlParameter("@IdBotes", id))
+                    cmd.ExecuteNonQuery()
+                    cnn.Close()
+                    cargarData()
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+            Else
+                MessageBox.Show("No hay botes para eliminar.")
+            End If
+        End If
     End Sub
 End Class
