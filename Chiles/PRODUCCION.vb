@@ -78,6 +78,59 @@ Public Class Produccion
         CbEstatus.ValueMember = "Codigo"
         CbEstatus.DisplayMember = "Descripcion"
         CbEstatus.SelectedIndex = 1
+
+        'Busqueda Rapida---------------------------------------------
+        Dim TablaRapida As DataTable = New DataTable("TablaRapida")
+
+        TablaRapida.Columns.Add("Id")
+        TablaRapida.Columns.Add("Descripcion")
+
+        Dim row As DataRow
+
+        row = TablaRapida.NewRow()
+        row("Id") = "1"
+        row("Descripcion") = "LUNES"
+        TablaRapida.Rows.Add(row)
+
+        row = TablaRapida.NewRow()
+        row("Id") = "2"
+        row("Descripcion") = "MARTES"
+        TablaRapida.Rows.Add(row)
+
+        row = TablaRapida.NewRow()
+        row("Id") = "3"
+        row("Descripcion") = "MIERCOLES"
+        TablaRapida.Rows.Add(row)
+
+        row = TablaRapida.NewRow()
+        row("Id") = "4"
+        row("Descripcion") = "JUEVES"
+        TablaRapida.Rows.Add(row)
+
+        row = TablaRapida.NewRow()
+        row("Id") = "5"
+        row("Descripcion") = "VIERNES"
+        TablaRapida.Rows.Add(row)
+
+        row = TablaRapida.NewRow()
+        row("Id") = "6"
+        row("Descripcion") = "SABADO"
+        TablaRapida.Rows.Add(row)
+
+        row = TablaRapida.NewRow()
+        row("Id") = "7"
+        row("Descripcion") = "DOMINGO"
+        TablaRapida.Rows.Add(row)
+
+        row = TablaRapida.NewRow()
+        row("Id") = "8"
+        row("Descripcion") = "TODOS"
+        TablaRapida.Rows.Add(row)
+
+        CbDiaBR.DataSource = TablaRapida
+        CbDiaBR.ValueMember = "Id"
+        CbDiaBR.DisplayMember = "Descripcion"
+        CbDiaBR.SelectedValue = 1
     End Sub
     Private Sub BtIniciar_Click(sender As Object, e As EventArgs) Handles BtIniciar.Click
         ÍniciarProduccion()
@@ -338,6 +391,21 @@ Public Class Produccion
             Else
                 MessageBox.Show("No hay botes para eliminar.")
             End If
+        End If
+    End Sub
+
+    Private Sub BtBuscarBR_Click(sender As Object, e As EventArgs) Handles BtBuscarBR.Click
+        If DgBoteIngresado.RowCount = 0 Then
+            Exit Sub
+        ElseIf DgBoteIngresado.RowCount > 0 Then
+            If cnn.State <> ConnectionState.Open Then cnn.Open()
+            Dim cmd As New SqlCommand("sp_ConRapPro", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@Id", CInt(TbIdBR.Text)))
+            cmd.Parameters.Add(New SqlParameter("@Dia", CbDiaBR.Text))
+            cmd.Parameters.Add(New SqlParameter("@IdProduccion", CInt(TxIdProduccion.Text)))
+            cmd.ExecuteNonQuery()
+            cnn.Close()
         End If
     End Sub
 End Class

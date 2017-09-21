@@ -25,6 +25,7 @@ Partial Class Produccion
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Produccion))
         Me.DtFecha = New System.Windows.Forms.DateTimePicker()
         Me.GbCaptura = New System.Windows.Forms.GroupBox()
+        Me.BtEliminarBote = New System.Windows.Forms.Button()
         Me.BtCerrar = New System.Windows.Forms.Button()
         Me.TxCaptura = New System.Windows.Forms.TextBox()
         Me.GbAbrir = New System.Windows.Forms.GroupBox()
@@ -52,12 +53,23 @@ Partial Class Produccion
         Me.TsSalir = New System.Windows.Forms.ToolStripButton()
         Me.DgBoteIngresado = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.BtEliminarBote = New System.Windows.Forms.Button()
+        Me.GbBusquedaRapida = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TbIdBR = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.CbDiaBR = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TbBotesTotalBR = New System.Windows.Forms.TextBox()
+        Me.BtBuscarBR = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.GbCaptura.SuspendLayout()
         Me.GbAbrir.SuspendLayout()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.DgBoteIngresado, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GbBusquedaRapida.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DtFecha
@@ -80,6 +92,21 @@ Partial Class Produccion
         Me.GbCaptura.Size = New System.Drawing.Size(825, 84)
         Me.GbCaptura.TabIndex = 1
         Me.GbCaptura.TabStop = False
+        '
+        'BtEliminarBote
+        '
+        Me.BtEliminarBote.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BtEliminarBote.BackgroundImage = CType(resources.GetObject("BtEliminarBote.BackgroundImage"), System.Drawing.Image)
+        Me.BtEliminarBote.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.BtEliminarBote.FlatAppearance.BorderSize = 5
+        Me.BtEliminarBote.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtEliminarBote.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtEliminarBote.Location = New System.Drawing.Point(405, 35)
+        Me.BtEliminarBote.Name = "BtEliminarBote"
+        Me.BtEliminarBote.Size = New System.Drawing.Size(114, 40)
+        Me.BtEliminarBote.TabIndex = 2
+        Me.BtEliminarBote.Text = "Eliminar Bote"
+        Me.BtEliminarBote.UseVisualStyleBackColor = False
         '
         'BtCerrar
         '
@@ -106,6 +133,7 @@ Partial Class Produccion
         '
         'GbAbrir
         '
+        Me.GbAbrir.Controls.Add(Me.GbBusquedaRapida)
         Me.GbAbrir.Controls.Add(Me.CbProducto)
         Me.GbAbrir.Controls.Add(Me.Label2)
         Me.GbAbrir.Controls.Add(Me.CbEstatus)
@@ -163,7 +191,7 @@ Partial Class Produccion
         'TxNombreDia
         '
         Me.TxNombreDia.Enabled = False
-        Me.TxNombreDia.Location = New System.Drawing.Point(363, 11)
+        Me.TxNombreDia.Location = New System.Drawing.Point(361, 12)
         Me.TxNombreDia.Name = "TxNombreDia"
         Me.TxNombreDia.Size = New System.Drawing.Size(114, 20)
         Me.TxNombreDia.TabIndex = 0
@@ -171,7 +199,7 @@ Partial Class Produccion
         '
         'TxIdProduccion
         '
-        Me.TxIdProduccion.Location = New System.Drawing.Point(483, 11)
+        Me.TxIdProduccion.Location = New System.Drawing.Point(361, 36)
         Me.TxIdProduccion.Name = "TxIdProduccion"
         Me.TxIdProduccion.Size = New System.Drawing.Size(114, 20)
         Me.TxIdProduccion.TabIndex = 0
@@ -208,7 +236,7 @@ Partial Class Produccion
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label5.Location = New System.Drawing.Point(328, 11)
+        Me.Label5.Location = New System.Drawing.Point(326, 12)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(34, 13)
         Me.Label5.TabIndex = 0
@@ -348,20 +376,104 @@ Partial Class Produccion
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "CAPTURAR BOTES :"
         '
-        'BtEliminarBote
+        'GbBusquedaRapida
         '
-        Me.BtEliminarBote.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BtEliminarBote.BackgroundImage = CType(resources.GetObject("BtEliminarBote.BackgroundImage"), System.Drawing.Image)
-        Me.BtEliminarBote.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.BtEliminarBote.FlatAppearance.BorderSize = 5
-        Me.BtEliminarBote.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BtEliminarBote.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtEliminarBote.Location = New System.Drawing.Point(405, 35)
-        Me.BtEliminarBote.Name = "BtEliminarBote"
-        Me.BtEliminarBote.Size = New System.Drawing.Size(114, 40)
-        Me.BtEliminarBote.TabIndex = 2
-        Me.BtEliminarBote.Text = "Eliminar Bote"
-        Me.BtEliminarBote.UseVisualStyleBackColor = False
+        Me.GbBusquedaRapida.Controls.Add(Me.NumericUpDown1)
+        Me.GbBusquedaRapida.Controls.Add(Me.Label8)
+        Me.GbBusquedaRapida.Controls.Add(Me.BtBuscarBR)
+        Me.GbBusquedaRapida.Controls.Add(Me.TbBotesTotalBR)
+        Me.GbBusquedaRapida.Controls.Add(Me.Label9)
+        Me.GbBusquedaRapida.Controls.Add(Me.CbDiaBR)
+        Me.GbBusquedaRapida.Controls.Add(Me.Label7)
+        Me.GbBusquedaRapida.Controls.Add(Me.TbIdBR)
+        Me.GbBusquedaRapida.Controls.Add(Me.Label6)
+        Me.GbBusquedaRapida.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.GbBusquedaRapida.Location = New System.Drawing.Point(483, 12)
+        Me.GbBusquedaRapida.Name = "GbBusquedaRapida"
+        Me.GbBusquedaRapida.Size = New System.Drawing.Size(336, 108)
+        Me.GbBusquedaRapida.TabIndex = 5
+        Me.GbBusquedaRapida.TabStop = False
+        Me.GbBusquedaRapida.Text = "Busqueda Rapida"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 20)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(18, 13)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "ID"
+        '
+        'TbIdBR
+        '
+        Me.TbIdBR.Location = New System.Drawing.Point(44, 17)
+        Me.TbIdBR.Name = "TbIdBR"
+        Me.TbIdBR.Size = New System.Drawing.Size(54, 20)
+        Me.TbIdBR.TabIndex = 1
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 45)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(23, 13)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "Dia"
+        '
+        'CbDiaBR
+        '
+        Me.CbDiaBR.FormattingEnabled = True
+        Me.CbDiaBR.Location = New System.Drawing.Point(44, 42)
+        Me.CbDiaBR.Name = "CbDiaBR"
+        Me.CbDiaBR.Size = New System.Drawing.Size(121, 21)
+        Me.CbDiaBR.TabIndex = 3
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(178, 20)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(61, 13)
+        Me.Label9.TabIndex = 6
+        Me.Label9.Text = "Botes Total"
+        '
+        'TbBotesTotalBR
+        '
+        Me.TbBotesTotalBR.Enabled = False
+        Me.TbBotesTotalBR.Location = New System.Drawing.Point(264, 17)
+        Me.TbBotesTotalBR.Name = "TbBotesTotalBR"
+        Me.TbBotesTotalBR.Size = New System.Drawing.Size(59, 20)
+        Me.TbBotesTotalBR.TabIndex = 7
+        '
+        'BtBuscarBR
+        '
+        Me.BtBuscarBR.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BtBuscarBR.Location = New System.Drawing.Point(44, 70)
+        Me.BtBuscarBR.Name = "BtBuscarBR"
+        Me.BtBuscarBR.Size = New System.Drawing.Size(75, 23)
+        Me.BtBuscarBR.TabIndex = 8
+        Me.BtBuscarBR.Text = "Buscar"
+        Me.BtBuscarBR.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(178, 45)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(13, 13)
+        Me.Label8.TabIndex = 9
+        Me.Label8.Text = "$"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.DecimalPlaces = 2
+        Me.NumericUpDown1.Enabled = False
+        Me.NumericUpDown1.Location = New System.Drawing.Point(244, 42)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {999999999, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(79, 20)
+        Me.NumericUpDown1.TabIndex = 10
+        Me.NumericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Produccion
         '
@@ -387,6 +499,9 @@ Partial Class Produccion
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.DgBoteIngresado, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GbBusquedaRapida.ResumeLayout(False)
+        Me.GbBusquedaRapida.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -421,4 +536,14 @@ Partial Class Produccion
     Friend WithEvents TsModificarPrecio As ToolStripButton
     Friend WithEvents TsSalir As ToolStripButton
     Friend WithEvents BtEliminarBote As Button
+    Friend WithEvents GbBusquedaRapida As GroupBox
+    Friend WithEvents BtBuscarBR As Button
+    Friend WithEvents TbBotesTotalBR As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents CbDiaBR As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TbIdBR As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents Label8 As Label
 End Class
