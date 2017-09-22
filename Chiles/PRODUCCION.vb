@@ -14,6 +14,11 @@ Public Class Produccion
         CbProducto.Text = ""
         CbEstatus.SelectedIndex = 1
         TxCaptura.Text = ""
+        TbIdBR.Text = ""
+        TbBotesTotalBR.Text = ""
+        CbDiaBR.SelectedIndex = -1
+        NuSumaPrecio.Value = 0
+        TbConteo.Text = ""
         DgBoteIngresado.DataSource = ""
         DgBoteIngresado.Columns.Clear()
         HabilitaControles()
@@ -180,7 +185,6 @@ Public Class Produccion
         cnn.Close()
         FormatoGridView()
     End Sub
-
     Private Sub CapturaBotes(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxCaptura.KeyPress
         If e.KeyChar = "." Then
             e.KeyChar = ""
@@ -218,6 +222,7 @@ Public Class Produccion
                     cargarData()
                     TxCaptura.Text = ""
                     TxCaptura.Select()
+                    ConteoBotes()
                 End Try
             End If
         End If
@@ -232,6 +237,7 @@ Public Class Produccion
             ' limpiarcampos()
             Dim codigoSeleccionado As Object = ConsultaProduccion.CodigoProduccion
             If codigoSeleccionado <> Nothing Then
+                Nuevo()
                 Dim cmd As New SqlCommand("sp_selProduccion", cnn)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.Add(New SqlClient.SqlParameter("@IdProduccion", codigoSeleccionado))
@@ -247,6 +253,7 @@ Public Class Produccion
                 CargaBotes(TxIdProduccion.Text)
                 InhabilitarControles()
                 GbCaptura.Enabled = True
+                ConteoBotes()
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -265,6 +272,7 @@ Public Class Produccion
             da.Fill(dt)
             DgBoteIngresado.DataSource = dt
             cnn.Close()
+            FormatoGridView()
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -368,7 +376,11 @@ Public Class Produccion
             MessageBox.Show("Precio Actualizado!")
         End Try
     End Sub
-
+    Private Sub ConteoBotes()
+        If DgBoteIngresado.RowCount > 0 Then
+            TbConteo.Text = DgBoteIngresado.RowCount
+        End If
+    End Sub
     Private Sub BtEliminarBote_Click(sender As Object, e As EventArgs) Handles BtEliminarBote.Click
         Dim opc As DialogResult = MessageBox.Show("¿Eliminar Bote?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If opc = DialogResult.Yes Then
@@ -404,8 +416,14 @@ Public Class Produccion
             cmd.Parameters.Add(New SqlParameter("@Id", CInt(TbIdBR.Text)))
             cmd.Parameters.Add(New SqlParameter("@Dia", CbDiaBR.Text))
             cmd.Parameters.Add(New SqlParameter("@IdProduccion", CInt(TxIdProduccion.Text)))
-            cmd.ExecuteNonQuery()
+            Dim da As New SqlClient.SqlDataAdapter(cmd)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            Dim row As DataRow = dt.Rows(0)
+            TbBotesTotalBR.Text = row("Botes")
+            NuSumaPrecio.Value = row("SumaPrecio")
             cnn.Close()
         End If
     End Sub
+
 End Class
