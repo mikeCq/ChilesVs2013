@@ -77,7 +77,7 @@ Partial Class REPORTEPOREMPLEADO
         Me.GroupBox1.Location = New System.Drawing.Point(12, 29)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(432, 448)
-        Me.GroupBox1.TabIndex = 6
+        Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Liquidaciones"
         '
@@ -106,7 +106,7 @@ Partial Class REPORTEPOREMPLEADO
         Me.BtImprimir.Location = New System.Drawing.Point(254, 397)
         Me.BtImprimir.Name = "BtImprimir"
         Me.BtImprimir.Size = New System.Drawing.Size(103, 23)
-        Me.BtImprimir.TabIndex = 12
+        Me.BtImprimir.TabIndex = 2
         Me.BtImprimir.Text = "Imprimir Reporte"
         Me.BtImprimir.UseVisualStyleBackColor = True
         '
@@ -115,7 +115,7 @@ Partial Class REPORTEPOREMPLEADO
         Me.BtLimpiar.Location = New System.Drawing.Point(95, 397)
         Me.BtLimpiar.Name = "BtLimpiar"
         Me.BtLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.BtLimpiar.TabIndex = 13
+        Me.BtLimpiar.TabIndex = 3
         Me.BtLimpiar.Text = "Limpiar"
         Me.BtLimpiar.UseVisualStyleBackColor = True
         '
@@ -151,7 +151,7 @@ Partial Class REPORTEPOREMPLEADO
         Me.TxFinal.Location = New System.Drawing.Point(254, 318)
         Me.TxFinal.Name = "TxFinal"
         Me.TxFinal.Size = New System.Drawing.Size(68, 20)
-        Me.TxFinal.TabIndex = 6
+        Me.TxFinal.TabIndex = 1
         '
         'TxIDLiquidacion
         '
@@ -167,7 +167,7 @@ Partial Class REPORTEPOREMPLEADO
         Me.TxInicio.Location = New System.Drawing.Point(95, 318)
         Me.TxInicio.Name = "TxInicio"
         Me.TxInicio.Size = New System.Drawing.Size(68, 20)
-        Me.TxInicio.TabIndex = 8
+        Me.TxInicio.TabIndex = 0
         '
         'REPORTEPOREMPLEADO
         '

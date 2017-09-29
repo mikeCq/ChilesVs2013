@@ -11,6 +11,7 @@ Public Class REPORTEPOREMPLEADO
         TxIDLiquidacion.Text = ""
         TxInicio.Text = ""
         TxFinal.Text = ""
+        CRReporteLiquidacion.ReportSource = Nothing
         CRReporteLiquidacion.Refresh()
     End Sub
     Private Sub cargarData()
@@ -30,9 +31,26 @@ Public Class REPORTEPOREMPLEADO
         DgLiquidaciones.Columns("PagoTotal").HeaderText = "Total Pagado"
         DgLiquidaciones.Columns("BotesTotal").HeaderText = "Total de Botes"
     End Sub
+    Private Function obtenerProducciones(ByVal concatenado As String)
+        Dim ds As New DsLiquidacionGlobal
+        Dim StrSql As String = "execute sp_ObtProduccionesLiquidadas '" & TxIDLiquidacion.Text & "'"
+        Dim dtInforme As New DataTable
+        If cnn.State <> ConnectionState.Open Then cnn.Open()
+
+        Using dad As New SqlDataAdapter(StrSql, cnn)
+            dad.Fill(dtInforme)
+        End Using
+
+        For Each row As DataRow In dtInforme.Rows
+            concatenado = concatenado & "," & row("idproduccion")
+        Next
+
+        concatenado = concatenado.TrimStart(",")
+        Return concatenado
+    End Function
     Private Sub BtImprimir_Click(sender As Object, e As EventArgs) Handles BtImprimir.Click
-        If TxInicio.Text = "" Or TxFinal.Text = "" Then
-            MessageBox.Show("Campos de rango de empleados no puede estar vacio!", "Aviso")
+        If TxInicio.Text = "" Or TxFinal.Text = "" Or TxIDLiquidacion.Text = "" Then
+            MessageBox.Show("Verifica campos vacios!", "Aviso")
         ElseIf CInt(TxInicio.Text) > CInt(TxFinal.Text) Then
             MessageBox.Show("El campo de empleado inicial no puede ser mayor al final.", "Aviso")
         ElseIf CInt(TxFinal.Text) < CInt(TxInicio.Text) Then
@@ -40,8 +58,8 @@ Public Class REPORTEPOREMPLEADO
         Else
             Try
                 Dim ds As New DsLiquidacionGlobal
-
-                Dim cadena As String = TxIDLiquidacion.Text
+                Dim Concatenado As String = Nothing
+                Dim cadena As String = obtenerProducciones(concatenado)
                 Dim StrSql As String = "execute sp_ReporteLiquidacionEmpleado '" & cadena & "','" & TxInicio.Text & "','" & TxFinal.Text & "'"
                 Dim dtInforme As New DataTable
                 Dim Ruta As String = Application.StartupPath & "\RPT\RptLiquidacionGlobal.rpt"
