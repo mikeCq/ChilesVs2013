@@ -426,6 +426,7 @@ Partial Class Produccion
         Me.TsEliminar.Text = "Eliminar Produccion"
         Me.TsEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.TsEliminar.ToolTipText = "Eliminar"
+        Me.TsEliminar.Visible = False
         '
         'ToolStripSeparator3
         '

@@ -104,7 +104,7 @@ Public Class Produccion
 
         row = TablaRapida.NewRow()
         row("Id") = "3"
-        row("Descripcion") = "MIERCOLES"
+        row("Descripcion") = "MIÉRCOLES"
         TablaRapida.Rows.Add(row)
 
         row = TablaRapida.NewRow()
@@ -119,7 +119,7 @@ Public Class Produccion
 
         row = TablaRapida.NewRow()
         row("Id") = "6"
-        row("Descripcion") = "SABADO"
+        row("Descripcion") = "SÁBADO"
         TablaRapida.Rows.Add(row)
 
         row = TablaRapida.NewRow()
@@ -344,8 +344,10 @@ Public Class Produccion
     End Sub
 
     Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
-        Guardar()
-        NuPrecio.Enabled = False
+        If NuPrecio.Enabled = True Then
+            Guardar()
+            NuPrecio.Enabled = False
+        End If
     End Sub
     Private Sub InhabilitarControles()
         CbProducto.Enabled = False
@@ -397,6 +399,7 @@ Public Class Produccion
                     cmd.ExecuteNonQuery()
                     cnn.Close()
                     cargarData()
+                    ConteoBotes()
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 End Try
@@ -407,7 +410,9 @@ Public Class Produccion
     End Sub
 
     Private Sub BtBuscarBR_Click(sender As Object, e As EventArgs) Handles BtBuscarBR.Click
-        If DgBoteIngresado.RowCount = 0 Then
+        If TbIdBR.Text = "" Or TxIdProduccion.Text = "" Then
+            MessageBox.Show("No puedes buscar sin abrir produccion o dejar campo de empleado vacio.")
+        ElseIf DgBoteIngresado.RowCount = 0 Then
             Exit Sub
         ElseIf DgBoteIngresado.RowCount > 0 Then
             If cnn.State <> ConnectionState.Open Then cnn.Open()

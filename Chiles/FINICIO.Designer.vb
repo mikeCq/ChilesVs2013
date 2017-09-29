@@ -32,6 +32,7 @@ Partial Class FInicio
         Me.UtilidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteDeLiquidacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportePorEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ACERCADEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VerLaAyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SoporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -105,10 +106,10 @@ Partial Class FInicio
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteDeLiquidacionesToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteDeLiquidacionesToolStripMenuItem, Me.ReportePorEmpleadosToolStripMenuItem})
         Me.ReportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(147, 26)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(152, 26)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'ReporteDeLiquidacionesToolStripMenuItem
@@ -118,6 +119,14 @@ Partial Class FInicio
         Me.ReporteDeLiquidacionesToolStripMenuItem.Name = "ReporteDeLiquidacionesToolStripMenuItem"
         Me.ReporteDeLiquidacionesToolStripMenuItem.Size = New System.Drawing.Size(273, 26)
         Me.ReporteDeLiquidacionesToolStripMenuItem.Text = "Reporte de Liquidaciones"
+        '
+        'ReportePorEmpleadosToolStripMenuItem
+        '
+        Me.ReportePorEmpleadosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ReportePorEmpleadosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.ReportePorEmpleadosToolStripMenuItem.Name = "ReportePorEmpleadosToolStripMenuItem"
+        Me.ReportePorEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(273, 26)
+        Me.ReportePorEmpleadosToolStripMenuItem.Text = "Reporte Por Empleados"
         '
         'ACERCADEToolStripMenuItem
         '
@@ -195,4 +204,5 @@ Partial Class FInicio
     Friend WithEvents AsercaDeChilesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SoporteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VerLaAyudaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportePorEmpleadosToolStripMenuItem As ToolStripMenuItem
 End Class

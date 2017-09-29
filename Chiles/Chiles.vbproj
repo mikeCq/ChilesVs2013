@@ -195,6 +195,12 @@
     <Compile Include="REPORTELIQUIDACIONGLOBAL.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="REPORTEPOREMPLEADO.Designer.vb">
+      <DependentUpon>REPORTEPOREMPLEADO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTEPOREMPLEADO.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RPT\RptLiquidacionDetalle.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTELIQUIDACIONGLOBAL.resx">
       <DependentUpon>REPORTELIQUIDACIONGLOBAL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTEPOREMPLEADO.resx">
+      <DependentUpon>REPORTEPOREMPLEADO.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RPT\RptLiquidacionDetalle.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -314,6 +323,7 @@
     <Content Include="Iconos\Actualizar.ico" />
     <Content Include="Iconos\Black Icon Package Icon 29.ico" />
     <Content Include="Iconos\Black Icon Package Icon 36.ico" />
+    <Content Include="WallFarmsLogo.ico" />
     <None Include="Iconos\boton.png" />
     <Content Include="Iconos\Consultar.ico" />
     <Content Include="Iconos\Eliminar.ico" />

@@ -28,6 +28,9 @@ Public Class FInicio
     Private Sub AsercaDeChilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AsercaDeChilesToolStripMenuItem.Click
         ACERCADE.ShowDialog()
     End Sub
+    Private Sub ReportePorEmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportePorEmpleadosToolStripMenuItem.Click
+        REPORTEPOREMPLEADO.ShowDialog()
+    End Sub
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         If cnn.State = ConnectionState.Open Then cnn.Close()
         Close()

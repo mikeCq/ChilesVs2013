@@ -12,7 +12,6 @@ Public Class REPORTELIQUIDACIONGLOBAL
             Dim dtInforme As New DataTable
             Dim Ruta As String = Application.StartupPath & "\RPT\RptLiquidacionGlobal.rpt"
             If cnn.State <> ConnectionState.Open Then cnn.Open()
-
             Using dad As New SqlDataAdapter(StrSql, cnn)
                 dad.Fill(dtInforme)
             End Using
@@ -30,11 +29,9 @@ Public Class REPORTELIQUIDACIONGLOBAL
             'dasp_Subinforme.SelectCommand = daSubinforme
             'Dim dsSubinforme As New DataTable
             'dasp_Subinforme.Fill(dsSubinforme)
-
             Dim CrReport As New CrystalDecisions.CrystalReports.Engine.ReportDocument
             ' Asigno el reporte 
             CrReport = New CrystalDecisions.CrystalReports.Engine.ReportDocument()
-
             CrReport.Load(Ruta)
             CrReport.SetDataSource(ds)
             CrReport.Subreports("DetallePorEmpleado").SetDataSource(ds)

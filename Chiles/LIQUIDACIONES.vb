@@ -272,21 +272,25 @@ Public Class LIQUIDACIONES
     End Sub
 
     Private Sub TsEliminar_Click(sender As Object, e As EventArgs) Handles TsEliminar.Click
-        Dim Contador As Integer
-        Try
-            For Contador = 0 To DgLiquidaciones.RowCount - 1
-                If DgLiquidaciones.Rows(Contador).Cells("ChCol").Value = True Then
-                    TxIdProduccion.Text = DgLiquidaciones.Rows(Contador).Cells("Idproduccion").Value
-                    Eliminar(TxIdProduccion.Text)
+        Dim opc As DialogResult = MessageBox.Show("¿Desea eliminar la liquidacion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If opc = DialogResult.Yes Then
+            Dim Contador As Integer
+            Try
+                For Contador = 0 To DgLiquidaciones.RowCount - 1
+                    If DgLiquidaciones.Rows(Contador).Cells("ChCol").Value = True Then
+                        TxIdProduccion.Text = DgLiquidaciones.Rows(Contador).Cells("Idproduccion").Value
+                        Eliminar(TxIdProduccion.Text)
+                    End If
+                Next Contador
+                If DgBotesIngresados.Rows.Count = 0 Then
+                    Exit Sub
                 End If
-            Next Contador
-            If DgBotesIngresados.Rows.Count = 0 Then
-                Exit Sub
-            End If
-            Nuevo()
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
+                Nuevo()
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
+        End If
+
     End Sub
     Private Sub Eliminar(ByVal IdProduccion As Integer)
         If cnn.State <> ConnectionState.Open Then cnn.Open()
