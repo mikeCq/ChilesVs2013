@@ -26,6 +26,7 @@ Partial Class FInicio
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CatalogosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProduccionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstablecerPrecioDiarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LiquidacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -55,7 +56,7 @@ Partial Class FInicio
         'CatalogosToolStripMenuItem
         '
         Me.CatalogosToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.CatalogosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem})
+        Me.CatalogosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem, Me.UsuariosToolStripMenuItem})
         Me.CatalogosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.CatalogosToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CatalogosToolStripMenuItem.Name = "CatalogosToolStripMenuItem"
@@ -69,6 +70,12 @@ Partial Class FInicio
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
         Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(157, 26)
         Me.ProductosToolStripMenuItem.Text = "Productos"
+        '
+        'UsuariosToolStripMenuItem
+        '
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(157, 26)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'ProduccionToolStripMenuItem
         '
@@ -195,4 +202,5 @@ Partial Class FInicio
     Friend WithEvents AsercaDeChilesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SoporteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VerLaAyudaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
 End Class

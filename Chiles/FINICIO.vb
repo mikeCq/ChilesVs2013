@@ -32,4 +32,8 @@ Public Class FInicio
         If cnn.State = ConnectionState.Open Then cnn.Close()
         Close()
     End Sub
+
+    Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
+        Usuarios.ShowDialog()
+    End Sub
 End Class

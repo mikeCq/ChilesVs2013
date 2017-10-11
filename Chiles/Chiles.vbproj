@@ -162,6 +162,12 @@
     <Compile Include="LIQUIDACIONES.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -219,6 +225,12 @@
     <Compile Include="SOPORTE.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Usuarios.Designer.vb">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VarGlob.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LIQUIDACIONES.resx">
       <DependentUpon>LIQUIDACIONES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -266,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SOPORTE.resx">
       <DependentUpon>SOPORTE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -312,6 +330,7 @@
       <DependentUpon>ChilesDB.mdf</DependentUpon>
     </Content>
     <Content Include="Iconos\Actualizar.ico" />
+    <Content Include="Iconos\Black Icon Package Icon 03.ico" />
     <Content Include="Iconos\Black Icon Package Icon 29.ico" />
     <Content Include="Iconos\Black Icon Package Icon 36.ico" />
     <None Include="Iconos\boton.png" />
