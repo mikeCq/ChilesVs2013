@@ -2645,7 +2645,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1034</td><td>DevApp</td><td>0</td><td/><td>-198894167</td></row>
+		<row><td>COMPANY_NAME</td><td>1034</td><td>DevApp</td><td>0</td><td/><td>488989142</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1034</td><td>Instalar siempre</td><td>0</td><td/><td>-333065264</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1034</td><td>La configuración de colores de su sistema no es adecuada para ejecutar [ProductName].</td><td>0</td><td/><td>-333065264</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION45FULL</td><td>1034</td><td>Microsoft .NET Framework 4.5 Full package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>-333065264</td></row>
@@ -3749,8 +3749,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1034</td><td>El procesador no es el adecuado para ejecutar [ProductName].</td><td>0</td><td/><td>-333065264</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1034</td><td>La cantidad de RAM no es la adecuada para ejecutar [ProductName].</td><td>0</td><td/><td>-333065264</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1034</td><td>La resolución de pantalla no es la adecuada para ejecutar [ProductName].</td><td>0</td><td/><td>-333065264</td></row>
-		<row><td>ID_STRING1</td><td>1034</td><td>http://www.DevApp.com</td><td>0</td><td/><td>-198894167</td></row>
-		<row><td>ID_STRING2</td><td>1034</td><td>DevApp</td><td>0</td><td/><td>-198894167</td></row>
+		<row><td>ID_STRING1</td><td>1034</td><td>http://www.DevApp.com</td><td>0</td><td/><td>488989142</td></row>
+		<row><td>ID_STRING2</td><td>1034</td><td>DevApp</td><td>0</td><td/><td>488989142</td></row>
 		<row><td>ID_STRING3</td><td>1034</td><td>LAUNCH~1.EXE|Launch Chiles.exe</td><td>0</td><td/><td>-333065264</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Installation Chiles</td><td>0</td><td/><td>-333118480</td></row>
 		<row><td>ID_STRING4</td><td>1034</td><td>Installation Chiles</td><td>0</td><td/><td>-333118480</td></row>
@@ -3871,9 +3871,9 @@
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;VSSolutionFolder&gt;\Chiles\Iconos\logoChileColor.ico</td><td>0</td></row>
 		<row><td>Chiles.exe1_09BE44B620914AADAE264F46FCA4ADA8.exe</td><td/><td>C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\Chiles.exe</td><td>0</td></row>
-		<row><td>Chiles.exe1_7D3208949C56441192E46E6268CC8D0F.exe</td><td/><td>C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\Chiles.exe</td><td>0</td></row>
+		<row><td>Chiles.exe1_0C25EA90316D4DF39C867A4B3D31F240.exe</td><td/><td>&lt;VSSolutionFolder&gt;\Chiles\Iconos\logoChileColor.ico</td><td>0</td></row>
 		<row><td>Chiles.exe_974E3AA291DB4F67984777B2FB0B217D.exe</td><td/><td>C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\Chiles.exe</td><td>0</td></row>
-		<row><td>Chiles.exe_EBE77BF17A8346939585A19CC825C31C.exe</td><td/><td>C:\Users\MSISTEMAS\Desktop\Desarrollo\ChilesVs2013\Chiles\bin\Debug\Chiles.exe</td><td>0</td></row>
+		<row><td>Chiles.exe_D420C14839DB4A939EF471F00309871A.exe</td><td/><td>&lt;VSSolutionFolder&gt;\Chiles\Iconos\logoChileColor.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4543,8 +4543,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>Chiles.exe</td><td>chiles</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>Chiles.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Chiles.exe_EBE77BF17A8346939585A19CC825C31C.exe</td><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>Chiles.exe1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>Chiles.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Chiles.exe1_7D3208949C56441192E46E6268CC8D0F.exe</td><td>1</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>Chiles.exe</td><td>chiles</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>Chiles.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Chiles.exe_D420C14839DB4A939EF471F00309871A.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>Chiles.exe1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME2##</td><td>Chiles.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>Chiles.exe1_0C25EA90316D4DF39C867A4B3D31F240.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

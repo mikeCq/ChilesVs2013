@@ -34,6 +34,7 @@ Partial Class REPORTEPOREMPLEADO
         Me.TxFinal = New System.Windows.Forms.TextBox()
         Me.TxIDLiquidacion = New System.Windows.Forms.TextBox()
         Me.TxInicio = New System.Windows.Forms.TextBox()
+        Me.BtPdf = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DgLiquidaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -169,12 +170,22 @@ Partial Class REPORTEPOREMPLEADO
         Me.TxInicio.Size = New System.Drawing.Size(68, 20)
         Me.TxInicio.TabIndex = 0
         '
+        'BtPdf
+        '
+        Me.BtPdf.Location = New System.Drawing.Point(160, 528)
+        Me.BtPdf.Name = "BtPdf"
+        Me.BtPdf.Size = New System.Drawing.Size(103, 23)
+        Me.BtPdf.TabIndex = 2
+        Me.BtPdf.Text = "Abrir en PDF"
+        Me.BtPdf.UseVisualStyleBackColor = True
+        '
         'REPORTEPOREMPLEADO
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1069, 637)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.BtPdf)
         Me.Controls.Add(Me.CRReporteLiquidacion)
         Me.Controls.Add(Me.Splitter1)
         Me.Name = "REPORTEPOREMPLEADO"
@@ -200,4 +211,5 @@ Partial Class REPORTEPOREMPLEADO
     Friend WithEvents TxIDLiquidacion As TextBox
     Friend WithEvents TxInicio As TextBox
     Friend WithEvents DgLiquidaciones As DataGridView
+    Friend WithEvents BtPdf As Button
 End Class

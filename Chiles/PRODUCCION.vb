@@ -19,6 +19,7 @@ Public Class Produccion
         CbDiaBR.SelectedIndex = -1
         NuSumaPrecio.Value = 0
         TbConteo.Text = ""
+        DtFecha.Value = Now
         DgBoteIngresado.DataSource = ""
         DgBoteIngresado.Columns.Clear()
         HabilitaControles()
@@ -246,7 +247,7 @@ Public Class Produccion
                 da.Fill(dt)
                 Dim row As DataRow = dt.Rows(0)
                 TxIdProduccion.Text = row("IdProduccion")
-                DtFecha.Value = row("Fecha")
+                ' DtFecha.Value = row("Fecha")
                 NuPrecio.Value = row("Precio")
                 CbProducto.Text = CStr(row("Producto"))
                 CbEstatus.SelectedValue = row("IdEstatus")
@@ -282,6 +283,8 @@ Public Class Produccion
         If opc = DialogResult.Yes Then
             If NuPrecio.Value = 0 Or CbProducto.SelectedValue = Nothing Or CbProducto.Text = "" Then
                 MessageBox.Show("No puedes iniciar la produccion con campos vacios.", "Aviso")
+            ElseIf DgBoteIngresado.RowCount = 0 Then
+                MessageBox.Show("No se puede cerrar produccion sin ingresar botes.", "Aviso")
             Else
                 Dim TotalPrecio As Decimal
                 TotalPrecio = DgBoteIngresado.RowCount * NuPrecio.Value

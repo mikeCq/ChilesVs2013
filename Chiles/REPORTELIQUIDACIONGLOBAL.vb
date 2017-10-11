@@ -36,6 +36,7 @@ Public Class REPORTELIQUIDACIONGLOBAL
             CrReport.SetDataSource(ds)
             CrReport.Subreports("DetallePorEmpleado").SetDataSource(ds)
             CRReporteGlobal.ReportSource = CrReport
+            CRReporteGlobal.ExportReport()
             cnn.Close()
         Catch ex As Exception
             MessageBox.Show("excepcion: " & ex.Message, "Mostrando Reporte")
