@@ -14,6 +14,7 @@ Public Class Login
         End If
         For Each fila As DataRow In TablaUsuarios.Rows
             If fila.Item("Usuario") = TbUsuario.Text And fila.Item("Password") = TbPassword.Text Then
+                Me.Hide()
                 FInicio.ShowDialog()
                 Close()
             Else

@@ -38,6 +38,7 @@ Partial Class FInicio
         Me.SoporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AsercaDeChilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportePorEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -112,10 +113,10 @@ Partial Class FInicio
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteDeLiquidacionesToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteDeLiquidacionesToolStripMenuItem, Me.ReportePorEmpleadosToolStripMenuItem})
         Me.ReportesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(147, 26)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(152, 26)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'ReporteDeLiquidacionesToolStripMenuItem
@@ -166,6 +167,12 @@ Partial Class FInicio
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(56, 25)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
+        'ReportePorEmpleadosToolStripMenuItem
+        '
+        Me.ReportePorEmpleadosToolStripMenuItem.Name = "ReportePorEmpleadosToolStripMenuItem"
+        Me.ReportePorEmpleadosToolStripMenuItem.Size = New System.Drawing.Size(273, 26)
+        Me.ReportePorEmpleadosToolStripMenuItem.Text = "Reporte Por Empleados"
+        '
         'FInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -203,4 +210,5 @@ Partial Class FInicio
     Friend WithEvents SoporteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VerLaAyudaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportePorEmpleadosToolStripMenuItem As ToolStripMenuItem
 End Class
